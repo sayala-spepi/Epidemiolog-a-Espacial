@@ -79,12 +79,12 @@ const SITE_DATA = {
     subtitle: "Un equipo interdisciplinario que combina epidemiología, geografía, estadística y ciencias de la computación.",
     members: [
       {
-        name: "Dra. Valentina Rojas",
-        role: "Directora del Laboratorio",
-        area: "Epidemiología Espacial · Teledetección",
-        photo: "https://i.pravatar.cc/200?img=47",
-        orcid: "#",
-        scholar: "#"
+        name: "Dr. Salvador Ayala Pizarro",
+        role: "Investigador Principal",
+        area: "Epidemiología Espacial · Epidemiología Ambiental · Clima & Salud",
+        photo: "https://medicina.udd.cl/centro-epidemiologia-politicas-salud/files/2024/10/salvador-ayala-rb_.png",
+        ResearchGate: "https://www.researchgate.net/profile/Salvador_Ayala",
+        scholar: "https://scholar.google.com/citations?user=0Fu4x2MAAAAJ&hl=es"
       },
       {
         name: "Dr. Matías Fernández",
