@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Laboratorio de Epidemiología Espacial</title>
+  <link rel="icon" id="favicon" href="logo.png" type="image/png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind + Lucide -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Leaflet (mapa interactivo) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy:  { DEFAULT: '#1e3a8a', light: '#2d52b8', dark: '#152a66' },
+            sand:  '#f5f2ed',
+            ink:   '#111827',
+            muted: '#6b7280'
+          },
+          fontFamily: {
+            display: ['Fraunces', 'Georgia', 'serif'],
+            body:    ['DM Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ── Base ── */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: #fff; color: #111827; }
+
+    /* ── Typography ── */
+    .font-display { font-family: 'Fraunces', Georgia, serif; }
+
+    /* ── Nav underline ── */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1.5px; background: #1e3a8a;
+      transition: width .25s ease;
+    }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+    /* ── Hero pattern ── */
+    .hero-bg {
+      background-color: #fff;
+      background-image:
+        radial-gradient(circle at 72% 20%, rgba(30,58,138,.06) 0%, transparent 55%),
+        radial-gradient(circle at 15% 80%, rgba(30,58,138,.04) 0%, transparent 45%);
+    }
+    .hero-grid {
+      background-image: linear-gradient(rgba(30,58,138,.04) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(30,58,138,.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    /* ── Card hover ── */
+    .card-hover {
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(30,58,138,.1);
+    }
+
+    /* ── Section transition ── */
+    .section-fade {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+    .section-fade.visible { opacity: 1; transform: none; }
+
+    /* ── Leaflet map ── */
+    #map { height: 480px; border-radius: 12px; z-index: 0; }
+
+    /* ── Mobile menu ── */
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: flex; }
+
+    /* ── Tag pill ── */
+    .tag { display: inline-block; font-size: .7rem; font-weight: 600; letter-spacing: .04em;
+           padding: 2px 8px; border-radius: 999px; }
+  </style>
+</head>
+
+<body>
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  NAVEGACIÓN                              ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<header id="navbar" class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100 transition-shadow duration-300">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+
+    <!-- Logo -->
+    <a href="#inicio" class="flex items-center gap-3 shrink-0">
+      <img id="nav-logo" src="logo.png" alt="Logo" class="h-10 w-auto">
+    </a>
+
+    <!-- Desktop links -->
+    <ul id="nav-links" class="hidden md:flex items-center gap-8 text-sm font-medium text-ink"></ul>
+
+    <!-- Mobile toggle -->
+    <button id="menu-btn" class="md:hidden p-2 text-ink" aria-label="Menú">
+      <i data-lucide="menu" class="w-5 h-5"></i>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden flex-col border-t border-gray-100 bg-white px-6 pb-4 gap-3 text-sm font-medium text-ink"></div>
+</header>
+
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  HERO / INICIO                           ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<section id="inicio" class="hero-bg hero-grid min-h-screen flex flex-col justify-center pt-16">
+  <div class="max-w-6xl mx-auto px-6 py-24 lg:py-32 grid lg:grid-cols-2 gap-16 items-center">
+
+    <!-- Copy -->
+    <div class="section-fade">
+      <span id="hero-tag" class="tag bg-navy/10 text-navy uppercase tracking-widest text-[.65rem] mb-6 inline-block"></span>
+      <h1 id="hero-title" class="font-display text-5xl lg:text-6xl font-bold text-ink leading-[1.1] mb-6 whitespace-pre-line"></h1>
+      <p id="hero-subtitle" class="text-muted text-lg leading-relaxed mb-10 max-w-lg"></p>
+      <div class="flex flex-wrap gap-3">
+        <a id="hero-cta-primary"   href="#" class="px-6 py-3 bg-navy text-white text-sm font-semibold rounded-lg hover:bg-navy-light transition-colors"></a>
+        <a id="hero-cta-secondary" href="#" class="px-6 py-3 border border-navy/30 text-navy text-sm font-semibold rounded-lg hover:border-navy/60 transition-colors"></a>
+      </div>
+
+      <!-- Stats -->
+      <div id="hero-stats" class="flex flex-wrap gap-10 mt-14 pt-10 border-t border-gray-100"></div>
+    </div>
+
+    <!-- Visual globe placeholder -->
+    <div class="hidden lg:flex items-center justify-center section-fade">
+      <div class="relative w-80 h-80">
+        <div class="absolute inset-0 rounded-full border-2 border-navy/10 animate-[spin_60s_linear_infinite]"></div>
+        <div class="absolute inset-6 rounded-full border border-navy/8 animate-[spin_40s_linear_infinite_reverse]"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <img src="logo.png" alt="Logo" class="w-56 h-56 object-contain drop-shadow-xl">
+        </div>
+        <!-- orbiting dots -->
+        <div class="absolute top-4 right-10 w-2 h-2 rounded-full bg-navy/30 animate-pulse"></div>
+        <div class="absolute bottom-8 left-6 w-1.5 h-1.5 rounded-full bg-navy/20 animate-pulse" style="animation-delay:.8s"></div>
+        <div class="absolute top-1/2 right-0 w-1 h-1 rounded-full bg-navy/40 animate-pulse" style="animation-delay:1.4s"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  LÍNEAS DE INVESTIGACIÓN                 ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<section id="investigacion" class="py-24 bg-sand">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="max-w-xl mb-16 section-fade">
+      <h2 id="rl-title"    class="font-display text-4xl font-bold text-ink mb-4"></h2>
+      <p  id="rl-subtitle" class="text-muted leading-relaxed"></p>
+    </div>
+    <div id="rl-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 section-fade"></div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  INTEGRANTES                             ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<section id="integrantes" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="max-w-xl mb-16 section-fade">
+      <h2 id="team-title"    class="font-display text-4xl font-bold text-ink mb-4"></h2>
+      <p  id="team-subtitle" class="text-muted leading-relaxed"></p>
+    </div>
+    <div id="team-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 section-fade"></div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  PROYECTOS                               ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<section id="proyectos" class="py-24 bg-sand">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="max-w-xl mb-16 section-fade">
+      <h2 id="proj-title"    class="font-display text-4xl font-bold text-ink mb-4"></h2>
+      <p  id="proj-subtitle" class="text-muted leading-relaxed"></p>
+    </div>
+    <div id="proj-list" class="flex flex-col gap-6 section-fade"></div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  PUBLICACIONES                           ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<section id="publicaciones" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 section-fade">
+      <div class="max-w-xl">
+        <h2 id="pub-title"    class="font-display text-4xl font-bold text-ink mb-4"></h2>
+        <p  id="pub-subtitle" class="text-muted leading-relaxed"></p>
+      </div>
+      <a id="pub-scholar" href="#" target="_blank"
+         class="shrink-0 flex items-center gap-2 text-sm font-semibold text-navy border border-navy/30 px-4 py-2 rounded-lg hover:bg-navy/5 transition-colors">
+        <i data-lucide="graduation-cap" class="w-4 h-4"></i> Google Scholar
+      </a>
+    </div>
+    <div id="pub-list" class="flex flex-col gap-5 section-fade"></div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  VISUALIZADOR DE DATOS                   ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<section id="visualizador" class="py-24 bg-sand">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="max-w-xl mb-12 section-fade">
+      <h2 id="viz-title"    class="font-display text-4xl font-bold text-ink mb-4"></h2>
+      <p  id="viz-subtitle" class="text-muted leading-relaxed"></p>
+    </div>
+
+    <div class="section-fade">
+      <!-- Layer selector -->
+      <div id="layer-btns" class="flex flex-wrap gap-2 mb-6"></div>
+
+      <!-- Description -->
+      <p id="layer-desc" class="text-sm text-muted mb-4 italic"></p>
+
+      <!-- Map -->
+      <div id="map" class="shadow-md"></div>
+
+      <!-- Note -->
+      <p id="viz-note" class="text-xs text-muted mt-4"></p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  FOOTER / CONTACTO                       ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<footer id="contacto" class="bg-ink text-white py-16">
+  <div class="max-w-6xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+    <!-- Brand -->
+    <div>
+      <img src="logo.png" alt="Logo" class="h-12 w-auto mb-4 brightness-200 contrast-0 invert">
+      <p class="text-gray-400 text-sm leading-relaxed">
+        Laboratorio de Epidemiología Espacial<br>
+        Análisis geoespacial de salud pública.
+      </p>
+    </div>
+
+    <!-- Contact info -->
+    <div>
+      <h4 class="font-semibold mb-4 text-sm uppercase tracking-widest text-gray-400">Contacto</h4>
+      <ul class="space-y-2 text-sm text-gray-300">
+        <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 shrink-0 text-navy-light"></i>
+          <a id="footer-email" href="#" class="hover:text-white transition-colors"></a></li>
+        <li class="flex items-start gap-2"><i data-lucide="map-pin" class="w-4 h-4 shrink-0 mt-0.5 text-navy-light"></i>
+          <span id="footer-address" class="whitespace-pre-line"></span></li>
+      </ul>
+    </div>
+
+    <!-- Social -->
+    <div>
+      <h4 class="font-semibold mb-4 text-sm uppercase tracking-widest text-gray-400">Redes</h4>
+      <div class="flex gap-3">
+        <a id="footer-github" href="#" target="_blank" class="p-2 rounded-md border border-white/10 hover:border-white/30 transition-colors">
+          <i data-lucide="github" class="w-4 h-4"></i></a>
+        <a id="footer-twitter" href="#" target="_blank" class="p-2 rounded-md border border-white/10 hover:border-white/30 transition-colors">
+          <i data-lucide="twitter" class="w-4 h-4"></i></a>
+        <a id="footer-rg" href="#" target="_blank" class="p-2 rounded-md border border-white/10 hover:border-white/30 transition-colors">
+          <i data-lucide="book-open" class="w-4 h-4"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto px-6 mt-12 pt-8 border-t border-white/10 text-xs text-gray-500">
+    &copy; <span id="footer-year"></span> Laboratorio de Epidemiología Espacial. Contenido disponible bajo licencia CC BY 4.0.
+  </div>
+</footer>
+
+
+<!-- ============================================================
+     SCRIPTS — cargamos data.js primero, luego el renderizador
+     ============================================================ -->
+<script src="data.js"></script>
+<script>
+// ── Helpers ──────────────────────────────────────────────────
+const $  = (id) => document.getElementById(id);
+const el = (tag, cls, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html) e.innerHTML = html; return e; };
+
+// ── Intersection observer para animaciones ────────────────────
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }});
+}, { threshold: 0.1 });
+document.querySelectorAll('.section-fade').forEach(el => observer.observe(el));
+
+// ── Navbar scroll shadow ──────────────────────────────────────
+window.addEventListener('scroll', () => {
+  $('navbar').classList.toggle('shadow-sm', window.scrollY > 10);
+});
+
+// ── Active nav link ───────────────────────────────────────────
+const sections = ['inicio','investigacion','integrantes','proyectos','publicaciones','visualizador'];
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY + 100;
+  sections.forEach(id => {
+    const sec = document.getElementById(id);
+    if (!sec) return;
+    const link = document.querySelector(`[data-section="${id}"]`);
+    if (!link) return;
+    if (sec.offsetTop <= scrollY && sec.offsetTop + sec.offsetHeight > scrollY)
+      link.classList.add('active');
+    else link.classList.remove('active');
+  });
+});
+
+// ── Mobile menu toggle ────────────────────────────────────────
+$('menu-btn').addEventListener('click', () => $('mobile-menu').classList.toggle('open'));
+
+// ══════════════════════════════════════════════════════════════
+//  RENDER FUNCTIONS
+// ══════════════════════════════════════════════════════════════
+const D = SITE_DATA;
+
+// NAV
+const navSections = {
+  'Inicio': 'inicio', 'Integrantes': 'integrantes',
+  'Proyectos': 'proyectos', 'Publicaciones': 'publicaciones', 'Visualizador': 'visualizador'
+};
+D.nav.links.forEach(link => {
+  const sectionId = navSections[link.label] || link.href.replace('#','');
+  const li = el('li');
+  const a = el('a', 'nav-link text-ink/70 hover:text-ink transition-colors pb-0.5', link.label);
+  a.href = link.href; a.setAttribute('data-section', sectionId);
+  li.appendChild(a); $('nav-links').appendChild(li);
+
+  const mli = el('a', 'py-2 border-b border-gray-100 text-ink/70', link.label);
+  mli.href = link.href;
+  mli.addEventListener('click', () => $('mobile-menu').classList.remove('open'));
+  $('mobile-menu').appendChild(mli);
+});
+
+// HERO
+$('hero-tag').textContent        = D.hero.tag;
+$('hero-title').textContent      = D.hero.title;
+$('hero-subtitle').textContent   = D.hero.subtitle;
+$('hero-cta-primary').textContent  = D.hero.cta_primary.label;
+$('hero-cta-primary').href         = D.hero.cta_primary.href;
+$('hero-cta-secondary').textContent= D.hero.cta_secondary.label;
+$('hero-cta-secondary').href       = D.hero.cta_secondary.href;
+D.hero.stats.forEach(s => {
+  $('hero-stats').appendChild(el('div', '', `
+    <span class="font-display text-3xl font-bold text-navy">${s.value}</span>
+    <p class="text-xs text-muted mt-1 uppercase tracking-wider">${s.label}</p>`));
+});
+
+// RESEARCH LINES
+$('rl-title').textContent    = D.research_lines.title;
+$('rl-subtitle').textContent = D.research_lines.subtitle;
+D.research_lines.items.forEach(item => {
+  $('rl-grid').appendChild(el('div', 'bg-white rounded-xl p-6 card-hover', `
+    <div class="w-10 h-10 rounded-lg bg-navy/8 flex items-center justify-center mb-4">
+      <i data-lucide="${item.icon}" class="w-5 h-5 text-navy"></i>
+    </div>
+    <h3 class="font-semibold text-ink mb-2">${item.title}</h3>
+    <p class="text-sm text-muted leading-relaxed">${item.desc}</p>`));
+});
+
+// TEAM
+$('team-title').textContent    = D.team.title;
+$('team-subtitle').textContent = D.team.subtitle;
+D.team.members.forEach(m => {
+  $('team-grid').appendChild(el('div', 'flex flex-col items-center text-center card-hover rounded-xl p-6 border border-gray-100', `
+    <img src="${m.photo}" alt="${m.name}" class="w-20 h-20 rounded-full object-cover mb-4 ring-2 ring-navy/10">
+    <h3 class="font-semibold text-ink text-sm">${m.name}</h3>
+    <p class="text-navy text-xs font-medium mt-0.5">${m.role}</p>
+    <p class="text-muted text-xs mt-1 mb-4">${m.area}</p>
+    <div class="flex gap-2 mt-auto">
+      <a href="${m.orcid}" class="text-muted hover:text-navy transition-colors" title="ORCID"><i data-lucide="link-2" class="w-3.5 h-3.5"></i></a>
+      <a href="${m.scholar}" class="text-muted hover:text-navy transition-colors" title="Google Scholar"><i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i></a>
+    </div>`));
+});
+
+// PROJECTS
+$('proj-title').textContent    = D.projects.title;
+$('proj-subtitle').textContent = D.projects.subtitle;
+D.projects.items.forEach(p => {
+  const isActive = p.status === 'En curso';
+  $('proj-list').appendChild(el('div', 'bg-white rounded-xl p-7 card-hover border border-gray-100', `
+    <div class="flex flex-wrap items-center gap-3 mb-3">
+      <span class="tag ${isActive ? 'bg-emerald-50 text-emerald-700' : 'bg-gray-100 text-gray-600'}">${p.status}</span>
+      <span class="text-xs text-muted">${p.year}</span>
+      <span class="text-xs font-semibold text-navy/70">${p.funder}</span>
+    </div>
+    <h3 class="font-semibold text-ink mb-2 leading-snug">${p.title}</h3>
+    <p class="text-sm text-muted leading-relaxed mb-4">${p.desc}</p>
+    <div class="flex flex-wrap gap-2">${p.tags.map(t=>`<span class="tag bg-navy/6 text-navy/80">${t}</span>`).join('')}</div>`));
+});
+
+// PUBLICATIONS
+$('pub-title').textContent    = D.publications.title;
+$('pub-subtitle').textContent = D.publications.subtitle;
+$('pub-scholar').href         = D.publications.scholar_url;
+D.publications.items.forEach((p, i) => {
+  $('pub-list').appendChild(el('div', 'flex gap-5 items-start p-5 rounded-xl border border-gray-100 card-hover bg-white', `
+    <div class="shrink-0 w-12 h-12 rounded-lg bg-navy/8 flex items-center justify-center">
+      <span class="font-display text-lg font-bold text-navy">${p.year % 100}</span>
+    </div>
+    <div class="flex-1 min-w-0">
+      <p class="text-xs text-muted mb-0.5">${p.authors}</p>
+      <h3 class="font-semibold text-sm text-ink leading-snug mb-1">${p.title}</h3>
+      <p class="text-xs text-navy/80 font-medium">${p.journal} <span class="text-muted font-normal">· ${p.volume}</span></p>
+      <div class="flex flex-wrap gap-1.5 mt-2">
+        ${p.tags.map(t=>`<span class="tag bg-navy/6 text-navy/80">${t}</span>`).join('')}
+        <a href="${p.doi}" class="tag bg-gray-100 text-gray-600 hover:bg-navy/10 hover:text-navy transition-colors">DOI ↗</a>
+      </div>
+    </div>`));
+});
+
+// VISUALIZADOR
+$('viz-title').textContent    = D.visualizer.title;
+$('viz-subtitle').textContent = D.visualizer.subtitle;
+$('viz-note').textContent     = D.visualizer.note;
+
+// Map init (centrado en Chile)
+let map;
+window.addEventListener('load', () => {
+  map = L.map('map', { zoomControl: true }).setView([-33.45, -70.67], 8);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap, &copy; CARTO', maxZoom: 18
+  }).addTo(map);
+
+  // Demo layer: circles around Santiago comunas
+  const demoPts = [
+    [-33.45,-70.67],[-33.38,-70.60],[-33.52,-70.73],[-33.40,-70.74],
+    [-33.46,-70.55],[-33.58,-70.68],[-33.44,-70.80],[-33.36,-70.77]
+  ];
+  let activeLayer = null;
+
+  function setLayer(layerData) {
+    if (activeLayer) map.removeLayer(activeLayer);
+    const markers = demoPts.map((pt, i) =>
+      L.circleMarker(pt, {
+        radius: 8 + (i % 3)*4,
+        color: layerData.color,
+        fillColor: layerData.color,
+        fillOpacity: 0.25 + (i%4)*0.1,
+        weight: 1.5
+      }).bindPopup(`<b>${layerData.label}</b><br>Valor: ${(Math.random()*100).toFixed(1)}`)
+    );
+    activeLayer = L.layerGroup(markers).addTo(map);
+    $('layer-desc').textContent = layerData.description;
+  }
+
+  // Render buttons
+  D.visualizer.layers.forEach((layer, idx) => {
+    const btn = el('button',
+      `px-4 py-2 text-sm font-medium rounded-lg border transition-colors layer-btn`,
+      layer.label);
+    btn.setAttribute('data-idx', idx);
+    btn.style.borderColor = layer.color + '50';
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.layer-btn').forEach(b => {
+        b.style.background = ''; b.style.color = '#6b7280';
+      });
+      btn.style.background = layer.color + '15';
+      btn.style.color = layer.color;
+      setLayer(layer);
+    });
+    $('layer-btns').appendChild(btn);
+    if (idx === 0) { btn.click(); } // activate first
+  });
+});
+
+// FOOTER
+const fe = $('footer-email');
+fe.textContent = D.contact.email; fe.href = `mailto:${D.contact.email}`;
+$('footer-address').textContent   = D.contact.address;
+$('footer-github').href           = D.contact.github;
+$('footer-twitter').href          = D.contact.twitter;
+$('footer-rg').href               = D.contact.researchgate;
+$('footer-year').textContent      = new Date().getFullYear();
+
+// ── Init Lucide icons ────────────────────────────────────────
+lucide.createIcons();
+
+// Re-run icons after dynamic content added (needed for dynamic cards)
+setTimeout(() => lucide.createIcons(), 100);
+</script>
+
+</body>
+</html>
