@@ -11,6 +11,8 @@ Landing page estática del Laboratorio de Epidemiología Espacial, desplegable e
 ├── index.html        ← Estructura y estilos (NO editar para actualizar contenido)
 ├── data.js           ← ✅ TODO el contenido del sitio vive aquí
 ├── logo.png          ← Logo del laboratorio
+├── logo2.png          ← Logo del inicio
+├── logo3.png          ← Logo del footer contacto
 └── README.md
 ```
 
