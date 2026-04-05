@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Laboratorio de Epidemiología Espacial</title>
+  <link rel="icon" id="favicon" href="logo.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy:  { DEFAULT: '#1e3a8a', light: '#2d52b8', dark: '#152a66' },
+            sand:  '#f5f2ed',
+            ink:   '#111827',
+            muted: '#6b7280'
+          },
+          fontFamily: {
+            display: ['Fraunces', 'Georgia', 'serif'],
+            body:    ['DM Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: #fff; color: #111827; }
+    .font-display { font-family: 'Fraunces', Georgia, serif; }
+
+    /* Nav underline */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1.5px; background: #1e3a8a;
+      transition: width .25s ease;
+    }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+    /* Hero — fondo azul marino oscuro que combina con el logo */
+    .hero-bg {
+      background-color: #0f2057;
+      background-image:
+        radial-gradient(circle at 75% 25%, rgba(45,82,184,.5) 0%, transparent 55%),
+        radial-gradient(circle at 15% 80%, rgba(30,58,138,.4) 0%, transparent 45%);
+    }
+    .hero-grid {
+      background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    /* Cards */
+    .card-hover { transition: transform .2s ease, box-shadow .2s ease; }
+    .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(30,58,138,.1); }
+
+    /* Fade-in */
+    .section-fade { opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; }
+    .section-fade.visible { opacity: 1; transform: none; }
+
+    /* Mobile menu */
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: flex; }
+
+    /* Tag pill */
+    .tag { display: inline-block; font-size: .7rem; font-weight: 600; letter-spacing: .04em; padding: 2px 8px; border-radius: 999px; }
+
+    /* Footer logo blanco */
+    .footer-logo { filter: brightness(0) invert(1); }
+  </style>
+</head>
+
+<body>
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  NAVEGACIÓN                              ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<header id="navbar" class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100 transition-shadow duration-300">
+  <nav class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+    <!-- Logo más grande: h-14 -->
+    <a href="#inicio" class="flex items-center gap-3 shrink-0">
+      <img id="nav-logo" src="logo.png" alt="Logo" class="h-14 w-auto">
+    </a>
+    <ul id="nav-links" class="hidden md:flex items-center gap-8 text-sm font-medium text-ink"></ul>
+    <button id="menu-btn" class="md:hidden p-2 text-ink" aria-label="Menú">
+      <i data-lucide="menu" class="w-5 h-5"></i>
+    </button>
+  </nav>
+  <div id="mobile-menu" class="md:hidden flex-col border-t border-gray-100 bg-white px-6 pb-4 gap-3 text-sm font-medium text-ink"></div>
+</header>
+
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  HERO / INICIO                           ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<section id="inicio" class="hero-bg hero-grid min-h-screen flex flex-col justify-center pt-20">
+  <div class="max-w-6xl mx-auto px-6 py-24 lg:py-32 grid lg:grid-cols-2 gap-16 items-center">
+
+    <div class="section-fade">
+      <span id="hero-tag" class="tag bg-white/15 text-white/80 uppercase tracking-widest text-[.65rem] mb-6 inline-block"></span>
+      <h1 id="hero-title" class="font-display text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6 whitespace-pre-line"></h1>
+      <p id="hero-subtitle" class="text-white/70 text-lg leading-relaxed mb-10 max-w-lg"></p>
+      <div class="flex flex-wrap gap-3">
+        <a id="hero-cta-primary"   href="#" class="px-6 py-3 bg-white text-navy text-sm font-semibold rounded-lg hover:bg-white/90 transition-colors"></a>
+        <a id="hero-cta-secondary" href="#" class="px-6 py-3 border border-white/40 text-white text-sm font-semibold rounded-lg hover:border-white/70 transition-colors"></a>
+      </div>
+      <div id="hero-stats" class="flex flex-wrap gap-10 mt-14 pt-10 border-t border-white/15"></div>
+    </div>
+
+    <!-- Logo con anillos orbitales -->
+    <div class="hidden lg:flex items-center justify-center section-fade">
+      <div class="relative w-80 h-80">
+        <div class="absolute inset-0 rounded-full border-2 border-white/10 animate-[spin_60s_linear_infinite]"></div>
+        <div class="absolute inset-6 rounded-full border border-white/8 animate-[spin_40s_linear_infinite_reverse]"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <img src="logo.png" alt="Logo" class="w-64 h-64 object-contain drop-shadow-2xl">
+        </div>
+        <div class="absolute top-4 right-10 w-2 h-2 rounded-full bg-white/40 animate-pulse"></div>
+        <div class="absolute bottom-8 left-6 w-1.5 h-1.5 rounded-full bg-white/25 animate-pulse" style="animation-delay:.8s"></div>
+        <div class="absolute top-1/2 right-0 w-1 h-1 rounded-full bg-white/50 animate-pulse" style="animation-delay:1.4s"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  LÍNEAS DE INVESTIGACIÓN                 ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<section id="investigacion" class="py-24 bg-sand">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="max-w-xl mb-16 section-fade">
+      <h2 id="rl-title"    class="font-display text-4xl font-bold text-ink mb-4"></h2>
+      <p  id="rl-subtitle" class="text-muted leading-relaxed"></p>
+    </div>
+    <!-- íconos más grandes (w-14/h-14, icono w-7/h-7) -->
+    <div id="rl-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 section-fade"></div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  INTEGRANTES                             ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<section id="integrantes" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="max-w-xl mb-16 section-fade">
+      <h2 id="team-title"    class="font-display text-4xl font-bold text-ink mb-4"></h2>
+      <p  id="team-subtitle" class="text-muted leading-relaxed"></p>
+    </div>
+    <div id="team-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 section-fade"></div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  PROYECTOS                               ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<section id="proyectos" class="py-24 bg-sand">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="max-w-xl mb-16 section-fade">
+      <h2 id="proj-title"    class="font-display text-4xl font-bold text-ink mb-4"></h2>
+      <p  id="proj-subtitle" class="text-muted leading-relaxed"></p>
+    </div>
+    <div id="proj-list" class="flex flex-col gap-6 section-fade"></div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  PUBLICACIONES                           ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<section id="publicaciones" class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 section-fade">
+      <div class="max-w-xl">
+        <h2 id="pub-title"    class="font-display text-4xl font-bold text-ink mb-4"></h2>
+        <p  id="pub-subtitle" class="text-muted leading-relaxed"></p>
+      </div>
+      <a id="pub-scholar" href="#" target="_blank"
+         class="shrink-0 flex items-center gap-2 text-sm font-semibold text-navy border border-navy/30 px-4 py-2 rounded-lg hover:bg-navy/5 transition-colors">
+        <i data-lucide="graduation-cap" class="w-4 h-4"></i> Google Scholar
+      </a>
+    </div>
+    <div id="pub-list" class="flex flex-col gap-5 section-fade"></div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  RECURSOS — Visualizador Shiny           ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<section id="Recursos" class="py-24 bg-sand">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="max-w-xl mb-12 section-fade">
+      <h2 id="viz-title"    class="font-display text-4xl font-bold text-ink mb-4"></h2>
+      <p  id="viz-subtitle" class="text-muted leading-relaxed"></p>
+    </div>
+
+    <div class="section-fade">
+      <!-- Selector de apps -->
+      <div id="shiny-btns" class="flex flex-wrap gap-2 mb-4"></div>
+      <p id="shiny-desc" class="text-sm text-muted mb-5 italic"></p>
+
+      <!-- Contenedor del iframe Shiny -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+        <iframe id="shiny-frame" width="100%" height="620"
+          style="border:none; display:block;"
+          title="Visualizador de datos geoespaciales"
+          allowfullscreen></iframe>
+      </div>
+
+      <p id="viz-note" class="text-xs text-muted mt-4"></p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  FOOTER / CONTACTO                       ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<footer id="contacto" class="bg-[#0f2057] text-white py-16">
+  <div class="max-w-6xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+    <!-- Logo visible en fondo oscuro -->
+    <div>
+      <img src="logo.png" alt="Logo" class="footer-logo h-20 w-auto mb-5">
+      <p class="text-white/50 text-sm leading-relaxed">
+        Laboratorio de Epidemiología Espacial<br>
+        Análisis geoespacial de salud pública.
+      </p>
+    </div>
+
+    <!-- Contacto -->
+    <div>
+      <h4 class="font-semibold mb-4 text-xs uppercase tracking-widest text-white/40">Contacto</h4>
+      <ul class="space-y-3 text-sm text-white/70">
+        <li class="flex items-center gap-2">
+          <i data-lucide="mail" class="w-4 h-4 shrink-0 text-blue-300"></i>
+          <a id="footer-email" href="#" class="hover:text-white transition-colors"></a>
+        </li>
+        <li class="flex items-start gap-2">
+          <i data-lucide="map-pin" class="w-4 h-4 shrink-0 mt-0.5 text-blue-300"></i>
+          <span id="footer-address" class="whitespace-pre-line"></span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Redes -->
+    <div>
+      <h4 class="font-semibold mb-4 text-xs uppercase tracking-widest text-white/40">Redes</h4>
+      <div class="flex gap-3">
+        <a id="footer-github" href="#" target="_blank"
+           class="p-2.5 rounded-md border border-white/15 hover:border-white/40 hover:bg-white/5 transition-colors" title="GitHub">
+          <i data-lucide="github" class="w-5 h-5"></i></a>
+        <a id="footer-scholar" href="#" target="_blank"
+           class="p-2.5 rounded-md border border-white/15 hover:border-white/40 hover:bg-white/5 transition-colors" title="Google Scholar">
+          <i data-lucide="graduation-cap" class="w-5 h-5"></i></a>
+        <a id="footer-rg" href="#" target="_blank"
+           class="p-2.5 rounded-md border border-white/15 hover:border-white/40 hover:bg-white/5 transition-colors" title="ResearchGate">
+          <i data-lucide="book-open" class="w-5 h-5"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-6 mt-12 pt-8 border-t border-white/10 text-xs text-white/30">
+    &copy; <span id="footer-year"></span> Laboratorio de Epidemiología Espacial.
+    Contenido disponible bajo licencia CC BY 4.0.
+  </div>
+</footer>
+
+
+<!-- ============================================================
+     SCRIPTS
+     ============================================================ -->
+<script src="data.js"></script>
+<script>
+const $  = id => document.getElementById(id);
+const el = (tag, cls, html) => {
+  const e = document.createElement(tag);
+  if (cls)  e.className = cls;
+  if (html) e.innerHTML = html;
+  return e;
+};
+
+// Scroll shadow en navbar
+window.addEventListener('scroll', () => {
+  $('navbar').classList.toggle('shadow-sm', window.scrollY > 10);
+});
+
+// Active nav link
+const sectionIds = ['inicio','investigacion','integrantes','proyectos','publicaciones','Recursos'];
+window.addEventListener('scroll', () => {
+  const y = window.scrollY + 120;
+  sectionIds.forEach(id => {
+    const sec  = document.getElementById(id);
+    const link = document.querySelector(`[data-section="${id}"]`);
+    if (!sec || !link) return;
+    link.classList.toggle('active', sec.offsetTop <= y && sec.offsetTop + sec.offsetHeight > y);
+  });
+});
+
+// Mobile menu
+$('menu-btn').addEventListener('click', () => $('mobile-menu').classList.toggle('open'));
+
+// Animaciones scroll
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, { threshold: 0.1 });
+document.querySelectorAll('.section-fade').forEach(e => obs.observe(e));
+
+// ═════════════════════════════════════════════
+//  RENDER
+// ═════════════════════════════════════════════
+const D = SITE_DATA;
+
+// NAV
+const sectionMap = {
+  'Inicio':'inicio','Integrantes':'integrantes','Proyectos':'proyectos',
+  'Publicaciones':'publicaciones','Recursos':'Recursos'
+};
+D.nav.links.forEach(link => {
+  const sid = sectionMap[link.label] || link.href.replace('#','');
+  const li = el('li');
+  const a  = el('a','nav-link text-ink/70 hover:text-ink transition-colors pb-0.5', link.label);
+  a.href = link.href; a.setAttribute('data-section', sid);
+  li.appendChild(a); $('nav-links').appendChild(li);
+  const ma = el('a','py-2 border-b border-gray-100 text-ink/70', link.label);
+  ma.href = link.href;
+  ma.addEventListener('click', () => $('mobile-menu').classList.remove('open'));
+  $('mobile-menu').appendChild(ma);
+});
+
+// HERO
+$('hero-tag').textContent           = D.hero.tag;
+$('hero-title').textContent         = D.hero.title;
+$('hero-subtitle').textContent      = D.hero.subtitle;
+$('hero-cta-primary').textContent   = D.hero.cta_primary.label;
+$('hero-cta-primary').href          = D.hero.cta_primary.href;
+$('hero-cta-secondary').textContent = D.hero.cta_secondary.label;
+$('hero-cta-secondary').href        = D.hero.cta_secondary.href;
+D.hero.stats.forEach(s => {
+  $('hero-stats').appendChild(el('div','',`
+    <span class="font-display text-3xl font-bold text-white">${s.value}</span>
+    <p class="text-xs text-white/50 mt-1 uppercase tracking-wider">${s.label}</p>`));
+});
+
+// LÍNEAS — íconos más grandes
+$('rl-title').textContent    = D.research_lines.title;
+$('rl-subtitle').textContent = D.research_lines.subtitle;
+D.research_lines.items.forEach(item => {
+  $('rl-grid').appendChild(el('div','bg-white rounded-xl p-8 card-hover',`
+    <div class="w-14 h-14 rounded-xl bg-navy/8 flex items-center justify-center mb-5">
+      <i data-lucide="${item.icon}" class="w-7 h-7 text-navy"></i>
+    </div>
+    <h3 class="font-semibold text-ink mb-2 text-base">${item.title}</h3>
+    <p class="text-sm text-muted leading-relaxed">${item.desc}</p>`));
+});
+
+// INTEGRANTES — botones RG/Scholar más grandes con etiqueta
+$('team-title').textContent    = D.team.title;
+$('team-subtitle').textContent = D.team.subtitle;
+D.team.members.forEach(m => {
+  $('team-grid').appendChild(el('div','flex flex-col items-center text-center card-hover rounded-xl p-6 border border-gray-100',`
+    <img src="${m.photo}" alt="${m.name}" class="w-24 h-24 rounded-full object-cover mb-4 ring-2 ring-navy/10">
+    <h3 class="font-semibold text-ink text-sm">${m.name}</h3>
+    <p class="text-navy text-xs font-medium mt-0.5">${m.role}</p>
+    <p class="text-muted text-xs mt-1 mb-5 leading-relaxed">${m.area}</p>
+    <div class="flex gap-2 mt-auto">
+      <a href="${m.orcid||'#'}" target="_blank"
+         class="flex items-center gap-1.5 text-xs text-muted hover:text-navy transition-colors border border-gray-200 rounded-md px-3 py-1.5 hover:border-navy/30">
+        <i data-lucide="link-2" class="w-4 h-4"></i><span>ResearchGate</span>
+      </a>
+      <a href="${m.scholar||'#'}" target="_blank"
+         class="flex items-center gap-1.5 text-xs text-muted hover:text-navy transition-colors border border-gray-200 rounded-md px-3 py-1.5 hover:border-navy/30">
+        <i data-lucide="graduation-cap" class="w-4 h-4"></i><span>Scholar</span>
+      </a>
+    </div>`));
+});
+
+// PROYECTOS — incluye role con tag ámbar
+$('proj-title').textContent    = D.projects.title;
+$('proj-subtitle').textContent = D.projects.subtitle;
+D.projects.items.forEach(p => {
+  const isActive = p.status === 'En curso';
+  $('proj-list').appendChild(el('div','bg-white rounded-xl p-7 card-hover border border-gray-100',`
+    <div class="flex flex-wrap items-center gap-2 mb-3">
+      <span class="tag ${isActive?'bg-emerald-50 text-emerald-700':'bg-gray-100 text-gray-600'}">${p.status}</span>
+      <span class="text-xs text-muted">${p.year}</span>
+      <span class="tag bg-navy/8 text-navy/80">${p.funder||''}</span>
+      ${p.role?`<span class="tag bg-amber-50 text-amber-700">${p.role}</span>`:''}
+    </div>
+    <h3 class="font-semibold text-ink mb-2 leading-snug">${p.title}</h3>
+    <p class="text-sm text-muted leading-relaxed mb-4">${p.desc}</p>
+    <div class="flex flex-wrap gap-2">${p.tags.map(t=>`<span class="tag bg-navy/6 text-navy/70">${t}</span>`).join('')}</div>`));
+});
+
+// PUBLICACIONES — usa link o doi
+$('pub-title').textContent    = D.publications.title;
+$('pub-subtitle').textContent = D.publications.subtitle;
+$('pub-scholar').href         = D.publications.scholar_url;
+D.publications.items.forEach(p => {
+  const href    = p.link || p.doi || '#';
+  const volStr  = p.volume ? ` · ${p.volume}` : '';
+  $('pub-list').appendChild(el('div','flex gap-5 items-start p-5 rounded-xl border border-gray-100 card-hover bg-white',`
+    <div class="shrink-0 w-12 h-12 rounded-lg bg-navy/8 flex items-center justify-center">
+      <span class="font-display text-lg font-bold text-navy">${p.year%100}</span>
+    </div>
+    <div class="flex-1 min-w-0">
+      <p class="text-xs text-muted mb-0.5">${p.authors}</p>
+      <h3 class="font-semibold text-sm text-ink leading-snug mb-1">${p.title}</h3>
+      <p class="text-xs text-navy/80 font-medium">${p.journal}${volStr}</p>
+      <div class="flex flex-wrap gap-1.5 mt-2">
+        ${p.tags.map(t=>`<span class="tag bg-navy/6 text-navy/80">${t}</span>`).join('')}
+        <a href="${href}" target="_blank"
+           class="tag bg-gray-100 text-gray-600 hover:bg-navy/10 hover:text-navy transition-colors">
+          Ver artículo ↗
+        </a>
+      </div>
+    </div>`));
+});
+
+// VISUALIZADOR / RECURSOS — apps Shiny
+$('viz-title').textContent    = D.visualizer.title;
+$('viz-subtitle').textContent = D.visualizer.subtitle;
+$('viz-note').textContent     = D.visualizer.note;
+
+D.visualizer.layers.forEach((app, idx) => {
+  const btn = el('button','px-4 py-2 text-sm font-medium rounded-lg border transition-colors shiny-btn', app.label);
+  btn.style.borderColor = app.color + '60';
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.shiny-btn').forEach(b => { b.style.background=''; b.style.color='#6b7280'; });
+    btn.style.background = app.color + '18';
+    btn.style.color = app.color;
+    $('shiny-desc').textContent = app.description;
+    const frame = $('shiny-frame');
+    if (app.shiny_url) {
+      frame.removeAttribute('srcdoc');
+      frame.src = app.shiny_url;
+    } else {
+      frame.src = 'about:blank';
+      frame.srcdoc = `<html><body style="margin:0;display:flex;align-items:center;justify-content:center;
+        height:620px;font-family:DM Sans,sans-serif;background:#f8fafc;flex-direction:column;gap:14px;">
+        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="${app.color}" stroke-width="1.5" stroke-linecap="round">
+          <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+        </svg>
+        <p style="font-size:15px;font-weight:600;color:#1e3a8a;margin:0">${app.label}</p>
+        <p style="font-size:12px;color:#6b7280;text-align:center;max-width:340px;line-height:1.6;margin:0">
+          App Shiny próximamente disponible.<br>
+          Agrega la URL en <code style="background:#e5e7eb;padding:2px 6px;border-radius:4px;font-size:11px">data.js → shiny_url</code>
+        </p>
+      </body></html>`;
+    }
+  });
+  $('shiny-btns').appendChild(btn);
+  if (idx === 0) btn.click();
+});
+
+// FOOTER
+const fe = $('footer-email');
+fe.textContent = D.contact.email; fe.href = `mailto:${D.contact.email}`;
+$('footer-address').textContent = D.contact.address;
+$('footer-github').href   = D.contact.github  || '#';
+$('footer-scholar').href  = D.publications.scholar_url || '#';
+$('footer-rg').href       = D.contact.researchgate || (D.team.members[0]?.orcid) || '#';
+$('footer-year').textContent = new Date().getFullYear();
+
+// Lucide icons (doble pasada para contenido dinámico)
+lucide.createIcons();
+setTimeout(() => lucide.createIcons(), 150);
+</script>
+
+</body>
+</html>
