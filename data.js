@@ -73,7 +73,8 @@ const SITE_DATA = {
         area: "Epidemiología Espacial · Epidemiología Ambiental · Clima & Salud",
         photo: "https://medicina.udd.cl/centro-epidemiologia-politicas-salud/files/2024/10/salvador-ayala-rb_.png",
         orcid: "https://www.researchgate.net/profile/Salvador_Ayala",
-        scholar: "https://scholar.google.com/citations?user=0Fu4x2MAAAAJ&hl=es"
+        scholar: "https://scholar.google.com/citations?user=0Fu4x2MAAAAJ&hl=es",
+        linkedin: "https://www.linkedin.com/in/tu-usuario" 
       },
       {
         name: "Dr. xx",
@@ -81,7 +82,8 @@ const SITE_DATA = {
         area: "Estadística Espacial · SIG",
         photo: "https://i.pravatar.cc/200?img=12",
         orcid: "#",
-        scholar: "#"
+        scholar: "#",
+        linkedin: "#
       },
       {
         name: "Mg. xx",
@@ -89,7 +91,8 @@ const SITE_DATA = {
         area: "Salud Ambiental · Calor Urbano",
         photo: "https://i.pravatar.cc/200?img=32",
         orcid: "#",
-        scholar: "#"
+        scholar: "#",
+        linkedin: "#
       },
       {
         name: "Mg. xx",
@@ -97,7 +100,8 @@ const SITE_DATA = {
         area: "Ciencia de Datos · Machine Learning",
         photo: "https://i.pravatar.cc/200?img=15",
         orcid: "#",
-        scholar: "#"
+        scholar: "#",
+        linkedin: "#
       },
       {
         name: "Lic. xx",
@@ -105,7 +109,8 @@ const SITE_DATA = {
         area: "Desigualdades en Salud · APS",
         photo: "https://i.pravatar.cc/200?img=44",
         orcid: "#",
-        scholar: "#"
+        scholar: "#",
+        linkedin: "#
       },
       {
         name: "Lic. xx",
@@ -113,7 +118,8 @@ const SITE_DATA = {
         area: "Enfermedades Vectoriales · SIG",
         photo: "https://i.pravatar.cc/200?img=22",
         orcid: "#",
-        scholar: "#"
+        scholar: "#",
+        linkedin: "#
       }
     ]
   },
