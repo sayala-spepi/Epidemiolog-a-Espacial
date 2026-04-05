@@ -9,13 +9,13 @@ const SITE_DATA = {
   // ── META ──────────────────────────────────────────────────
   meta: {
     title: "Lab. Epidemiología Espacial",
-    description: "Laboratorio de Epidemiología Espacial — Análisis geoespacial de salud pública.",
-    favicon: "Logo.png"
+    description: "Laboratorio de Epidemiología Espacial — Análisis espacial para la salud pública.",
+    favicon: "logo.png"
   },
 
   // ── NAVEGACIÓN ────────────────────────────────────────────
   nav: {
-    logo: "Logo.png",
+    logo: "logo.png",
     links: [
       { label: "Inicio",        href: "#inicio" },
       { label: "Integrantes",   href: "#integrantes" },
@@ -27,8 +27,8 @@ const SITE_DATA = {
 
   // ── HERO (INICIO) ─────────────────────────────────────────
   hero: {
-    tag: "Laboratorio",
-    title: "Epidemiología \nEspacial.",
+    tag: "Laboratorio de",
+    title: "Epidemiología \nEspacial",
     subtitle: "Integramos el análisis espacial y datos de salud pública para identificar patrones territoriales de enfermedad, desigualdad y exposición ambiental.",
     cta_primary:   { label: "Contáctanos",      href: "#contacto" },
     cta_secondary: { label: "Ver proyectos",    href: "#proyectos" },
@@ -72,7 +72,7 @@ const SITE_DATA = {
         role: "Investigador Principal",
         area: "Epidemiología Espacial · Epidemiología Ambiental · Clima & Salud",
         photo: "https://medicina.udd.cl/centro-epidemiologia-politicas-salud/files/2024/10/salvador-ayala-rb_.png",
-        ResearchGate: "https://www.researchgate.net/profile/Salvador_Ayala",
+        orcid: "https://www.researchgate.net/profile/Salvador_Ayala",
         scholar: "https://scholar.google.com/citations?user=0Fu4x2MAAAAJ&hl=es"
       },
       {
@@ -156,8 +156,8 @@ const SITE_DATA = {
   // ── PUBLICACIONES ─────────────────────────────────────────
   publications: {
     title: "Publicaciones",
-    subtitle: "Selección de publicaciones recientes en revistas indexadas. Para la lista completa, consulta nuestro perfil en Google Scholar.",
-    scholar_url: "#",
+    subtitle: "Selección de publicaciones recientes en revistas indexadas. Para la lista completa, consulta perfil en Google Scholar.",
+    scholar_url: "https://scholar.google.com/citations?user=0Fu4x2MAAAAJ&hl=es",
     items: [
       {
         year: 2026,
