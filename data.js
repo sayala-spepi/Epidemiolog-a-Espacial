@@ -21,7 +21,7 @@ const SITE_DATA = {
       { label: "Integrantes",   href: "#integrantes" },
       { label: "Proyectos",     href: "#proyectos" },
       { label: "Publicaciones", href: "#publicaciones" },
-      { label: "Recursos",  href: "#visualizador" }
+      { label: "Recursos",  href: "#Recursos" }
     ]
   },
 
@@ -69,11 +69,7 @@ const SITE_DATA = {
         title: "Estadística Espacial",
         desc: "Regresión geográficamente ponderada, modelos bayesianos espacio-temporales y métodos de machine learning para datos de salud georeferenciados."
       },
-      {
-        icon: "cpu",
-        title: "Ciencia de Datos en Salud",
-        desc: "Desarrollo de pipelines de datos abiertos, dashboards interactivos y herramientas reproducibles para análisis de grandes volúmenes de datos sanitarios."
-      }
+      
     ]
   },
 
