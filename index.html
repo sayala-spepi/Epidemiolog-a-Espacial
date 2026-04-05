@@ -245,7 +245,7 @@
     <div>
       <img id="footer-logo" src="logo.png" alt="Logo"
            class="h-20 w-auto mb-5 object-contain"
-           style="">
+           style="filter: invert(1);">
       <p class="text-white/50 text-sm leading-relaxed">
         Laboratorio de Epidemiología Espacial<br>
         Análisis geoespacial de salud pública.
@@ -533,9 +533,11 @@ $('footer-github').href   = D.contact.github      || '#';   // ← agrega esta l
 $('footer-year').textContent = new Date().getFullYear();
 
 // ── Lucide icons (doble pasada para contenido dinámico) ────────
-lucide.createIcons();
-setTimeout(() => lucide.createIcons(), 300);
-setTimeout(() => lucide.createIcons(), 800);
+document.addEventListener('DOMContentLoaded', () => {
+  lucide.createIcons();
+  setTimeout(() => lucide.createIcons(), 500);
+  setTimeout(() => lucide.createIcons(), 1500);
+});
 </script>
 
 </body>
