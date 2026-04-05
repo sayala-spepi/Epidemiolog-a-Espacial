@@ -13,9 +13,15 @@ const SITE_DATA = {
     favicon: "logo.png"
   },
 
+  // ── LOGOS ─────────────────────────────────────────────────
+  logos: {
+    nav:    "logo.png",    // logo1 — aparece en el navbar (header)
+    hero:   "",            // logo2 — aparece en el hero/inicio (el grande orbitando). Si está vacío usa logo1
+    footer: ""             // logo3 — aparece en el footer (sin fondo). Si está vacío usa logo1
+  },
+
   // ── NAVEGACIÓN ────────────────────────────────────────────
   nav: {
-    logo: "logo.png",
     links: [
       { label: "Inicio",        href: "#inicio" },
       { label: "Integrantes",   href: "#integrantes" },
@@ -72,16 +78,16 @@ const SITE_DATA = {
         role: "Investigador Principal",
         area: "Epidemiología Espacial · Epidemiología Ambiental · Clima & Salud",
         photo: "https://medicina.udd.cl/centro-epidemiologia-politicas-salud/files/2024/10/salvador-ayala-rb_.png",
-        orcid: "https://www.researchgate.net/profile/Salvador_Ayala",
+        researchgate: "https://www.researchgate.net/profile/Salvador_Ayala",
         scholar: "https://scholar.google.com/citations?user=0Fu4x2MAAAAJ&hl=es",
-        linkedin: "https://www.linkedin.com/in/tu-usuario" 
+        linkedin: "https://www.linkedin.com/in/salvador-ayala-pizarro-70a83b7a/"
       },
       {
         name: "Dr. xx",
         role: "Investigador",
         area: "Estadística Espacial · SIG",
         photo: "https://i.pravatar.cc/200?img=12",
-        orcid: "#",
+        researchgate: "#",
         scholar: "#",
         linkedin: "#"
       },
@@ -90,7 +96,7 @@ const SITE_DATA = {
         role: "Investigadora",
         area: "Salud Ambiental · Calor Urbano",
         photo: "https://i.pravatar.cc/200?img=32",
-        orcid: "#",
+        researchgate: "#",
         scholar: "#",
         linkedin: "#"
       },
@@ -99,7 +105,7 @@ const SITE_DATA = {
         role: "Investigador",
         area: "Ciencia de Datos · Machine Learning",
         photo: "https://i.pravatar.cc/200?img=15",
-        orcid: "#",
+        researchgate: "#",
         scholar: "#",
         linkedin: "#"
       },
@@ -108,7 +114,7 @@ const SITE_DATA = {
         role: "Tesista Doctoral",
         area: "Desigualdades en Salud · APS",
         photo: "https://i.pravatar.cc/200?img=44",
-        orcid: "#",
+        researchgate: "#",
         scholar: "#",
         linkedin: "#"
       },
@@ -117,7 +123,7 @@ const SITE_DATA = {
         role: "Tesista Magíster",
         area: "Enfermedades Vectoriales · SIG",
         photo: "https://i.pravatar.cc/200?img=22",
-        orcid: "#",
+        researchgate: "#",
         scholar: "#",
         linkedin: "#"
       }
@@ -152,7 +158,7 @@ const SITE_DATA = {
         year: "2025–2026",
         funder: "Proyecto Interuniversitario",
         role: "Investigador co-Principal",
-        title: "REDES+: Efectos de la exposición a la contaminación atmosférica en la inasistencia escolar: Interacción con factores ambientales y su resultado en el rendimiento académico en colegios del Gran Santiago",
+        title: "REDES+: Efectos de la exposición a la contaminación atmosférica en la inasistencia escolar",
         desc: "Proyecto interdisciplinar para evaluar la exposición a contaminantes atmosférica en escuelas públicas del Gran Santiago. Coordinado entre investigadores de la Universidad del Desarrollo, Universidad Adolfo Ibáñez y la Universidad Mayor.",
         tags: ["PM2.5", "PurpleAir", "Educación", "Geoestadística"]
       }
@@ -160,12 +166,16 @@ const SITE_DATA = {
   },
 
   // ── PUBLICACIONES ─────────────────────────────────────────
+  //  Agrega "number" para el correlativo que aparece a la izquierda.
+  //  Puedes usar 1, 2, 3... o cualquier string como "1." o "P1".
+  // ──────────────────────────────────────────────────────────
   publications: {
     title: "Publicaciones",
     subtitle: "Selección de publicaciones recientes en revistas indexadas. Para la lista completa, consulta el perfil en Google Scholar.",
     scholar_url: "https://scholar.google.com/citations?user=0Fu4x2MAAAAJ&hl=es",
     items: [
       {
+        number: 1,
         year: 2026,
         authors: "Ayala S, et al.",
         title: "Spatial neighborhood patterns of pulmonary tuberculosis in a large urban area: the case of Santiago, Chile",
@@ -173,14 +183,12 @@ const SITE_DATA = {
         link: "https://www.nature.com/articles/s41598-026-36462-w",
         tags: ["Q1", "Factor de impacto 3.9"]
       }
+      // Para agregar más publicaciones, copia el bloque anterior y cambia los campos.
+      // El campo "number" es el correlativo que aparece a la izquierda de cada publicación.
     ]
   },
 
   // ── VISUALIZADOR / RECURSOS (apps Shiny) ──────────────────
-  //  Para activar una app, agrega el campo shiny_url con la URL
-  //  pública de tu app en shinyapps.io (u otro servidor Shiny).
-  //  Ejemplo: shiny_url: "https://usuario.shinyapps.io/mi-app"
-  // ──────────────────────────────────────────────────────────
   visualizer: {
     title: "Visualizador de Datos",
     subtitle: "Explora nuestros datos geoespaciales de manera interactiva. Selecciona una aplicación para visualizar en el visor.",
@@ -189,21 +197,21 @@ const SITE_DATA = {
         id: "tuberculosis",
         label: "Atlas de Tuberculosis",
         color: "#dc2626",
-        shiny_url: "",   // ← pega aquí la URL de tu app Shiny
+        shiny_url: "",
         description: "Distribución espacial de casos de tuberculosis pulmonar por áreas pequeñas en Chile. Fuente: MINSAL · 2015–2023."
       },
       {
         id: "aire",
         label: "Contaminación del Aire",
         color: "#7c3aed",
-        shiny_url: "",   // ← pega aquí la URL de tu app Shiny
+        shiny_url: "",
         description: "Concentraciones de PM2.5 medidas por sensores PurpleAir en escuelas del Gran Santiago. Proyecto REDES+."
       },
       {
         id: "vecindarios",
         label: "Vecindarios & Salud",
         color: "#0891b2",
-        shiny_url: "",   // ← pega aquí la URL de tu app Shiny
+        shiny_url: "",
         description: "Efectos de los vecindarios como determinante social de salud en el Área Metropolitana del Gran Santiago."
       }
     ],
@@ -212,12 +220,11 @@ const SITE_DATA = {
 
   // ── CONTACTO / FOOTER ─────────────────────────────────────
   contact: {
-    title: "Contacto",
     email: "salvadorayala@udd.cl",
     address: "Facultad de Medicina-Clínica Alemana, Universidad del Desarrollo\nAv. La Plaza 680, Santiago, Chile",
-    github: "https://github.com/sayala-spepi",
-    researchgate: "https://www.researchgate.net/profile/Salvador_Ayala",
-    linkedin: "https://www.linkedin.com/in/salvador-ayala-pizarro-70a83b7a/"    // ← pega aquí tu URL de LinkedIn, ej: "https://www.linkedin.com/in/tu-usuario"
+    linkedin:    "https://www.linkedin.com/in/salvador-ayala-pizarro-70a83b7a/",
+    scholar:     "https://scholar.google.com/citations?user=0Fu4x2MAAAAJ&hl=es",
+    researchgate:"https://www.researchgate.net/profile/Salvador_Ayala"
   }
 
 };
