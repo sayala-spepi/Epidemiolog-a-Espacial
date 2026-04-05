@@ -224,7 +224,7 @@ const SITE_DATA = {
     address: "Facultad de Medicina-Clínica Alemana, Universidad del Desarrollo\nAv. La Plaza 680, Santiago, Chile",
     linkedin:    "https://www.linkedin.com/in/salvador-ayala-pizarro-70a83b7a/",
     scholar:     "https://scholar.google.com/citations?user=0Fu4x2MAAAAJ&hl=es",
-    researchgate:"https://www.researchgate.net/profile/Salvador_Ayala"
+    researchgate:"https://www.researchgate.net/profile/Salvador_Ayala",
     github: "https://github.com/sayala-spepi",
   }
 
