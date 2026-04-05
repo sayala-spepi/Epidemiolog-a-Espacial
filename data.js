@@ -10,12 +10,12 @@ const SITE_DATA = {
   meta: {
     title: "Lab. Epidemiología Espacial",
     description: "Laboratorio de Epidemiología Espacial — Análisis geoespacial de salud pública.",
-    favicon: "logo.png"
+    favicon: "Logo.png"
   },
 
   // ── NAVEGACIÓN ────────────────────────────────────────────
   nav: {
-    logo: "logo.png",
+    logo: "Logo.png",
     links: [
       { label: "Inicio",        href: "#inicio" },
       { label: "Integrantes",   href: "#integrantes" },
@@ -27,15 +27,15 @@ const SITE_DATA = {
 
   // ── HERO (INICIO) ─────────────────────────────────────────
   hero: {
-    tag: "Laboratorio de Epidemiología Espacial",
-    title: "Comprendemos la geografía\nde la enfermedad.",
-    subtitle: "Integramos análisis geoespacial, sensores remotos y datos de salud pública para identificar patrones territoriales de enfermedad, desigualdad sanitaria y exposición ambiental en América Latina.",
+    tag: "Laboratorio",
+    title: "Epidemiología \nEspacial.",
+    subtitle: "Integramos el análisis espacial y datos de salud pública para identificar patrones territoriales de enfermedad, desigualdad y exposición ambiental.",
     cta_primary:   { label: "Contáctanos",      href: "#contacto" },
     cta_secondary: { label: "Ver proyectos",    href: "#proyectos" },
     stats: [
-      { value: "12+", label: "Proyectos activos" },
-      { value: "38",  label: "Publicaciones" },
-      { value: "6",   label: "Países" }
+      { value: "3+", label: "Proyectos activos" },
+      { value: "1",  label: "Publicaciones" },
+      { value: "3",   label: "Países" }
     ]
   },
 
@@ -46,31 +46,20 @@ const SITE_DATA = {
     items: [
       {
         icon: "map-pin",
-        title: "Geoespacial & SIG",
+        title: "Epidemiología Espacial",
         desc: "Modelamiento espacial de enfermedades transmisibles y no transmisibles. Análisis de clústeres, autocorrelación espacial y mapas de riesgo para la vigilancia epidemiológica."
       },
       {
         icon: "satellite",
-        title: "Teledetección & Ambiente",
-        desc: "Uso de imágenes satelitales para cuantificar exposición a calor urbano, contaminación atmosférica, cobertura vegetal y sus efectos en la morbimortalidad poblacional."
+        title: "Epidemiología Ambiental",
+        desc: "Evaluación y cuantificación en la exposición a contaminantes ambientales y sus efectos en la morbimortalidad poblacional."
       },
       {
         icon: "activity",
-        title: "Vigilancia Epidemiológica",
-        desc: "Diseño de sistemas de alerta temprana basados en datos de rutina, registros clínicos y fuentes no convencionales para la detección oportuna de brotes."
+        title: "Clima & Salud",
+        desc: "Estimación del riesgo en salud asociado al clima, cambio climatico y fenomenos socio-naturales."
       },
-      {
-        icon: "users",
-        title: "Determinantes Sociales",
-        desc: "Análisis de inequidades en salud a nivel territorial. Medición de privación social, acceso a servicios de salud y vulnerabilidad socioambiental."
-      },
-      {
-        icon: "bar-chart-2",
-        title: "Estadística Espacial",
-        desc: "Regresión geográficamente ponderada, modelos bayesianos espacio-temporales y métodos de machine learning para datos de salud georeferenciados."
-      },
-      
-    ]
+          ]
   },
 
   // ── INTEGRANTES ───────────────────────────────────────────
@@ -87,15 +76,15 @@ const SITE_DATA = {
         scholar: "https://scholar.google.com/citations?user=0Fu4x2MAAAAJ&hl=es"
       },
       {
-        name: "Dr. Matías Fernández",
-        role: "Investigador Asociado",
+        name: "Dr. xx",
+        role: "Investigador",
         area: "Estadística Espacial · SIG",
         photo: "https://i.pravatar.cc/200?img=12",
         orcid: "#",
         scholar: "#"
       },
       {
-        name: "Mg. Catalina Vega",
+        name: "Mg. xx",
         role: "Investigadora",
         area: "Salud Ambiental · Calor Urbano",
         photo: "https://i.pravatar.cc/200?img=32",
@@ -103,7 +92,7 @@ const SITE_DATA = {
         scholar: "#"
       },
       {
-        name: "Mg. Sebastián Torres",
+        name: "Mg. xx",
         role: "Investigador",
         area: "Ciencia de Datos · Machine Learning",
         photo: "https://i.pravatar.cc/200?img=15",
@@ -111,7 +100,7 @@ const SITE_DATA = {
         scholar: "#"
       },
       {
-        name: "Lic. Isidora Muñoz",
+        name: "Lic. xx",
         role: "Tesista Doctoral",
         area: "Desigualdades en Salud · APS",
         photo: "https://i.pravatar.cc/200?img=44",
@@ -119,7 +108,7 @@ const SITE_DATA = {
         scholar: "#"
       },
       {
-        name: "Lic. Felipe Araya",
+        name: "Lic. xx",
         role: "Tesista Magíster",
         area: "Enfermedades Vectoriales · SIG",
         photo: "https://i.pravatar.cc/200?img=22",
@@ -136,36 +125,31 @@ const SITE_DATA = {
     items: [
       {
         status: "En curso",
-        year: "2023–2026",
+        year: "2025–2028",
         funder: "ANID FONDECYT Regular",
-        title: "Impacto del calor urbano en la mortalidad cardiovascular en ciudades chilenas",
-        desc: "Evaluación del efecto de la isla de calor urbano (UHI) en la mortalidad por causas cardiovasculares en las 15 ciudades más pobladas de Chile, usando datos satelitales MODIS/Landsat y registros de defunción del MINSAL.",
-        tags: ["Calor urbano", "Mortalidad", "Teledetección", "Chile"]
+        role: "Investigador Principal",
+        title: "Evaluation of neighborhoods as a social determinant of health in Chile: the case of pulmonary tuberculosis",
+        desc: "Evaluación del efecto de los vecindarios en la transmición de tuberculosis pulmonar al interior del Área Metropolitana del Gran Santiago, Chile.",
+        tags: ["Tuberculosis", "Mortalidad", "Neighborhoods", "Epidemiología"]
       },
       {
         status: "En curso",
-        year: "2024–2027",
-        funder: "OPS/OMS",
-        title: "Atlas de inequidades sanitarias en América del Sur",
-        desc: "Construcción de un atlas interactivo de indicadores de salud desagregados a nivel municipal para 6 países de América del Sur, integrando fuentes de datos heterogéneas bajo estándares FAIR.",
-        tags: ["Inequidades", "Atlas", "América Latina", "Datos abiertos"]
+        year: "2025–2026",
+        funder: "ANID FONIS",
+        role: "Investigador Principal",
+        title: "Estimación espacial del riesgo de Tuberculosis pulmonar por áreas pequeñas en Chile.",
+        desc: "Elaboración de un listado de priorización y atlas de distribución de casos de tuberculosis pulmonar para todo Chile.",
+        tags: ["Tuberculosis", "Atlas", "Áreas pequeñas", "Geografía"]
       },
       {
         status: "En curso",
-        year: "2024–2025",
-        funder: "MINSAL",
-        title: "Sistema de vigilancia geoespacial para arbovirosis emergentes en el norte de Chile",
-        desc: "Diseño e implementación de un sistema de alerta temprana geoespacial para dengue, Zika y chikungunya en las regiones de Arica, Tarapacá y Antofagasta, integrando datos climáticos y entomológicos.",
-        tags: ["Arbovirosis", "Vigilancia", "Norte de Chile", "Alerta temprana"]
+        year: "2025–2026",
+        funder: "Proyecto Interuniversitario",
+        role: "Investigador co-Principal",
+        title: "REDES+: Efectos de la exposición a la contaminación del aire en la inasistencia escolar: Interacción con factores ambientales y su resultado en el rendimiento académico en colegios del Gran Santiago",
+        desc: "Proyecto interdisciplinar para evaluar la exposición a contaminantes del aire en escuelas públicas del Gran Santiago. Proyecto coordinado entre investigadores de la Universidad del Desarrollo, Universidad Adolfo Ibañez y la Universidad Mayor",
+        tags: ["PM2.5", "PurpleAir", "Educacíón", "Geoestadística"]
       },
-      {
-        status: "Completado",
-        year: "2020–2023",
-        funder: "ANID FONDECYT Iniciación",
-        title: "Factores geoespaciales asociados a la distribución de diabetes tipo 2 en Chile",
-        desc: "Análisis espacial de los determinantes socioeconómicos, ambientales y de acceso a salud asociados a la prevalencia de diabetes tipo 2 a nivel comunal en Chile continental.",
-        tags: ["Diabetes", "Determinantes sociales", "Análisis espacial"]
-      }
     ]
   },
 
@@ -176,51 +160,14 @@ const SITE_DATA = {
     scholar_url: "#",
     items: [
       {
-        year: 2024,
-        authors: "Rojas V, Fernández M, Vega C.",
-        title: "Urban heat island effect and cardiovascular mortality in Chilean cities: a spatiotemporal analysis, 2010–2022.",
-        journal: "Environmental Health Perspectives",
-        volume: "132(4):047002",
-        doi: "#",
-        tags: ["Q1", "Factor de impacto 10.1"]
+        year: 2026,
+        authors: "Ayala S, et al.",
+        title: "Spatial neighborhood patterns of pulmonary tuberculosis in a large urban area: the case of Santiago, Chile",
+        journal: "Scientific Report",
+        link: "https://www.nature.com/articles/s41598-026-36462-w",
+        tags: ["Q1", "Factor de impacto 3.9"]
       },
-      {
-        year: 2024,
-        authors: "Torres S, Rojas V, Muñoz I.",
-        title: "A machine learning framework for spatial prediction of dengue incidence in arid regions.",
-        journal: "PLOS Neglected Tropical Diseases",
-        volume: "18(2):e0011923",
-        doi: "#",
-        tags: ["Q1", "Open Access"]
-      },
-      {
-        year: 2023,
-        authors: "Fernández M, Araya F, Rojas V.",
-        title: "Socioeconomic deprivation and spatial clustering of type 2 diabetes in Chile: a Bayesian multilevel approach.",
-        journal: "Spatial and Spatio-temporal Epidemiology",
-        volume: "47:100607",
-        doi: "#",
-        tags: ["Q2"]
-      },
-      {
-        year: 2023,
-        authors: "Vega C, Rojas V.",
-        title: "Green space exposure and all-cause mortality in Latin American metropolitan areas: a multi-city analysis.",
-        journal: "Landscape and Urban Planning",
-        volume: "239:104856",
-        doi: "#",
-        tags: ["Q1", "Factor de impacto 8.6"]
-      },
-      {
-        year: 2022,
-        authors: "Rojas V, Muñoz I, Fernández M, Torres S.",
-        title: "Mapping healthcare accessibility gaps in Chile using network analysis and composite deprivation indices.",
-        journal: "Health & Place",
-        volume: "78:102934",
-        doi: "#",
-        tags: ["Q1"]
-      }
-    ]
+      ] 
   },
 
   // ── VISUALIZADOR ──────────────────────────────────────────
@@ -239,11 +186,9 @@ const SITE_DATA = {
   // ── CONTACTO / FOOTER ─────────────────────────────────────
   contact: {
     title: "Contacto",
-    email: "epi.espacial@universidad.cl",
-    address: "Facultad de Medicina, Universidad de Chile\nAv. Independencia 1027, Santiago, Chile",
-    github: "https://github.com/lab-epi-espacial",
-    twitter: "#",
-    researchgate: "#"
+    email: "salvadorayala@udd.cl",
+    address: "Facultad de Medicina-Clínica Alemana, Universidad del Desarrollo\nAv. La Plaza 680, Santiago, Chile",
+    github: "https://github.com/lab-epi-espacial"
   }
 
-};
+}; 
