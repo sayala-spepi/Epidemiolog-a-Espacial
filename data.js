@@ -83,7 +83,7 @@ const SITE_DATA = {
         photo: "https://i.pravatar.cc/200?img=12",
         orcid: "#",
         scholar: "#",
-        linkedin: "#
+        linkedin: "#"
       },
       {
         name: "Mg. xx",
@@ -92,7 +92,7 @@ const SITE_DATA = {
         photo: "https://i.pravatar.cc/200?img=32",
         orcid: "#",
         scholar: "#",
-        linkedin: "#
+        linkedin: "#"
       },
       {
         name: "Mg. xx",
@@ -101,7 +101,7 @@ const SITE_DATA = {
         photo: "https://i.pravatar.cc/200?img=15",
         orcid: "#",
         scholar: "#",
-        linkedin: "#
+        linkedin: "#"
       },
       {
         name: "Lic. xx",
@@ -110,7 +110,7 @@ const SITE_DATA = {
         photo: "https://i.pravatar.cc/200?img=44",
         orcid: "#",
         scholar: "#",
-        linkedin: "#
+        linkedin: "#"
       },
       {
         name: "Lic. xx",
@@ -119,7 +119,7 @@ const SITE_DATA = {
         photo: "https://i.pravatar.cc/200?img=22",
         orcid: "#",
         scholar: "#",
-        linkedin: "#
+        linkedin: "#"
       }
     ]
   },
