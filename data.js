@@ -16,8 +16,8 @@ const SITE_DATA = {
   // ── LOGOS ─────────────────────────────────────────────────
   logos: {
     nav:    "logo.png",    // logo1 — aparece en el navbar (header)
-    hero:   "",            // logo2 — aparece en el hero/inicio (el grande orbitando). Si está vacío usa logo1
-    footer: ""             // logo3 — aparece en el footer (sin fondo). Si está vacío usa logo1
+    hero:   "logo2.png",            // logo2 — aparece en el hero/inicio (el grande orbitando). Si está vacío usa logo1
+    footer: "logo3.png"             // logo3 — aparece en el footer (sin fondo). Si está vacío usa logo1
   },
 
   // ── NAVEGACIÓN ────────────────────────────────────────────
@@ -225,6 +225,7 @@ const SITE_DATA = {
     linkedin:    "https://www.linkedin.com/in/salvador-ayala-pizarro-70a83b7a/",
     scholar:     "https://scholar.google.com/citations?user=0Fu4x2MAAAAJ&hl=es",
     researchgate:"https://www.researchgate.net/profile/Salvador_Ayala"
+    github: "https://github.com/sayala-spepi",
   }
 
 };
