@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="page-title">Laboratorio de Epidemiología Espacial</title>
+  <title>Laboratorio de Epidemiología Espacial</title>
   <link rel="icon" href="logo.png" type="image/png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +38,6 @@
     body { font-family: 'DM Sans', sans-serif; background: #fff; color: #111827; }
     .font-display { font-family: 'Fraunces', Georgia, serif; }
 
-    /* Nav underline */
     .nav-link { position: relative; }
     .nav-link::after {
       content: ''; position: absolute; bottom: -2px; left: 0;
@@ -47,7 +46,6 @@
     }
     .nav-link:hover::after, .nav-link.active::after { width: 100%; }
 
-    /* Hero — fondo BLANCO con gradiente suave como original */
     .hero-bg {
       background-color: #fff;
       background-image:
@@ -61,30 +59,50 @@
       background-size: 40px 40px;
     }
 
-    /* Cards */
     .card-hover { transition: transform .2s ease, box-shadow .2s ease; }
     .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(30,58,138,.1); }
 
-    /* Fade-in */
     .section-fade { opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; }
     .section-fade.visible { opacity: 1; transform: none; }
 
-    /* Mobile menu */
     #mobile-menu { display: none; }
     #mobile-menu.open { display: flex; }
 
-    /* Tag pill */
     .tag { display: inline-block; font-size: .7rem; font-weight: 600; letter-spacing: .04em; padding: 2px 8px; border-radius: 999px; }
+
+    /* Botones de integrante: tamaño fijo para que el texto no se desborde */
+    .member-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      font-size: .7rem;
+      font-weight: 500;
+      color: #6b7280;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 5px 8px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color .2s, border-color .2s;
+    }
+    .member-btn:hover { color: #1e3a8a; border-color: rgba(30,58,138,.3); }
+    .member-btn img { width: 13px; height: 13px; object-fit: contain; flex-shrink: 0; }
+    .member-btn svg { flex-shrink: 0; }
+
+    /* Logo RG en footer */
+    .rg-icon { width: 18px; height: 18px; object-fit: contain; filter: brightness(10) saturate(0); flex-shrink: 0; }
   </style>
 </head>
 
 <body>
 
 <!-- ╔══════════════════════════════════════════╗ -->
-<!-- ║  NAVEGACIÓN — fondo blanco               ║ -->
+<!-- ║  NAVEGACIÓN                              ║ -->
 <!-- ╚══════════════════════════════════════════╝ -->
 <header id="navbar" class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100 transition-shadow duration-300">
   <nav class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+    <!-- logo1: navbar -->
     <a href="#inicio" class="flex items-center gap-3 shrink-0">
       <img id="nav-logo" src="logo.png" alt="Logo" class="h-14 w-auto">
     </a>
@@ -98,7 +116,7 @@
 
 
 <!-- ╔══════════════════════════════════════════╗ -->
-<!-- ║  HERO / INICIO — fondo blanco original   ║ -->
+<!-- ║  HERO / INICIO                           ║ -->
 <!-- ╚══════════════════════════════════════════╝ -->
 <section id="inicio" class="hero-bg hero-grid min-h-screen flex flex-col justify-center pt-20">
   <div class="max-w-6xl mx-auto px-6 py-24 lg:py-32 grid lg:grid-cols-2 gap-16 items-center">
@@ -114,13 +132,13 @@
       <div id="hero-stats" class="flex flex-wrap gap-10 mt-14 pt-10 border-t border-gray-100"></div>
     </div>
 
-    <!-- Logo con anillos orbitales -->
+    <!-- logo2: hero (puede ser distinto al logo1) -->
     <div class="hidden lg:flex items-center justify-center section-fade">
       <div class="relative w-80 h-80">
         <div class="absolute inset-0 rounded-full border-2 border-navy/10 animate-[spin_60s_linear_infinite]"></div>
         <div class="absolute inset-6 rounded-full border border-navy/8 animate-[spin_40s_linear_infinite_reverse]"></div>
         <div class="absolute inset-0 flex items-center justify-center">
-          <img src="logo.png" alt="Logo" class="w-64 h-64 object-contain drop-shadow-xl">
+          <img id="hero-logo" src="logo.png" alt="Logo" class="w-64 h-64 object-contain drop-shadow-xl">
         </div>
         <div class="absolute top-4 right-10 w-2 h-2 rounded-full bg-navy/30 animate-pulse"></div>
         <div class="absolute bottom-8 left-6 w-1.5 h-1.5 rounded-full bg-navy/20 animate-pulse" style="animation-delay:.8s"></div>
@@ -223,9 +241,9 @@
 <footer id="contacto" class="bg-ink text-white py-16">
   <div class="max-w-6xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
 
-    <!-- Brand — logo original (no invertido), sobre fondo oscuro -->
+    <!-- logo3: footer (sin fondo) -->
     <div>
-      <img src="logo.png" alt="Logo"
+      <img id="footer-logo" src="logo.png" alt="Logo"
            class="h-20 w-auto mb-5 object-contain"
            style="filter: brightness(10) saturate(0);">
       <p class="text-white/50 text-sm leading-relaxed">
@@ -249,33 +267,27 @@
       </ul>
     </div>
 
-    <!-- Redes: GitHub · Scholar · ResearchGate (imagen) · LinkedIn -->
+    <!-- Redes: solo LinkedIn · Scholar · ResearchGate -->
     <div>
       <h4 class="font-semibold mb-4 text-xs uppercase tracking-widest text-white/40">Redes</h4>
-      <div class="flex gap-3 flex-wrap">
-
-        <a id="footer-github" href="#" target="_blank"
-           class="p-2.5 rounded-md border border-white/15 hover:border-white/40 hover:bg-white/5 transition-colors" title="GitHub">
-          <i data-lucide="github" class="w-5 h-5"></i>
-        </a>
-
-        <a id="footer-scholar" href="#" target="_blank"
-           class="p-2.5 rounded-md border border-white/15 hover:border-white/40 hover:bg-white/5 transition-colors" title="Google Scholar">
-          <i data-lucide="graduation-cap" class="w-5 h-5"></i>
-        </a>
-
-        <!-- ResearchGate — imagen PNG subida al repo -->
-        <a id="footer-rg" href="#" target="_blank"
-           class="p-2.5 rounded-md border border-white/15 hover:border-white/40 hover:bg-white/5 transition-colors flex items-center justify-center" title="ResearchGate"
-           style="width:42px; height:42px;">
-          <img src="rg-logo.png" alt="ResearchGate"
-               style="width:20px; height:20px; object-fit:contain; filter: brightness(10) saturate(0);">
-        </a>
+      <div class="flex gap-3">
 
         <!-- LinkedIn -->
         <a id="footer-linkedin" href="#" target="_blank"
-           class="p-2.5 rounded-md border border-white/15 hover:border-white/40 hover:bg-white/5 transition-colors" title="LinkedIn">
+           class="w-10 h-10 rounded-md border border-white/15 hover:border-white/40 hover:bg-white/5 transition-colors flex items-center justify-center" title="LinkedIn">
           <i data-lucide="linkedin" class="w-5 h-5"></i>
+        </a>
+
+        <!-- Google Scholar -->
+        <a id="footer-scholar" href="#" target="_blank"
+           class="w-10 h-10 rounded-md border border-white/15 hover:border-white/40 hover:bg-white/5 transition-colors flex items-center justify-center" title="Google Scholar">
+          <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+        </a>
+
+        <!-- ResearchGate — imagen rg-logo.png en blanco -->
+        <a id="footer-rg" href="#" target="_blank"
+           class="w-10 h-10 rounded-md border border-white/15 hover:border-white/40 hover:bg-white/5 transition-colors flex items-center justify-center" title="ResearchGate">
+          <img src="rg-logo.png" alt="ResearchGate" class="rg-icon">
         </a>
 
       </div>
@@ -333,7 +345,15 @@ document.querySelectorAll('.section-fade').forEach(e => obs.observe(e));
 // ═════════════════════════════════════════════
 const D = SITE_DATA;
 
-// NAV
+// ── LOGOS ─────────────────────────────────────
+// logo1 = navbar
+$('nav-logo').src   = D.logos.nav || 'logo.png';
+// logo2 = hero (si está vacío usa el mismo que nav)
+$('hero-logo').src  = D.logos.hero || D.logos.nav || 'logo.png';
+// logo3 = footer (si está vacío usa el mismo que nav)
+$('footer-logo').src = D.logos.footer || D.logos.nav || 'logo.png';
+
+// ── NAV ───────────────────────────────────────
 const sectionMap = {
   'Inicio':'inicio','Integrantes':'integrantes','Proyectos':'proyectos',
   'Publicaciones':'publicaciones','Recursos':'Recursos'
@@ -350,7 +370,7 @@ D.nav.links.forEach(link => {
   $('mobile-menu').appendChild(ma);
 });
 
-// HERO
+// ── HERO ──────────────────────────────────────
 $('hero-tag').textContent           = D.hero.tag;
 $('hero-title').textContent         = D.hero.title;
 $('hero-subtitle').textContent      = D.hero.subtitle;
@@ -364,7 +384,7 @@ D.hero.stats.forEach(s => {
     <p class="text-xs text-muted mt-1 uppercase tracking-wider">${s.label}</p>`));
 });
 
-// LÍNEAS DE INVESTIGACIÓN
+// ── LÍNEAS DE INVESTIGACIÓN ───────────────────
 $('rl-title').textContent    = D.research_lines.title;
 $('rl-subtitle').textContent = D.research_lines.subtitle;
 D.research_lines.items.forEach(item => {
@@ -376,38 +396,53 @@ D.research_lines.items.forEach(item => {
     <p class="text-sm text-muted leading-relaxed">${item.desc}</p>`));
 });
 
-// INTEGRANTES — botones con logo RG imagen + Scholar
+// ── INTEGRANTES ───────────────────────────────
+// Íconos de redes: RG con imagen PNG, Scholar y LinkedIn con Lucide
 $('team-title').textContent    = D.team.title;
 $('team-subtitle').textContent = D.team.subtitle;
 D.team.members.forEach(m => {
-  $('team-grid').appendChild(el('div','flex flex-col items-center text-center card-hover rounded-xl p-6 border border-gray-100',`
+  const card = el('div','flex flex-col items-center text-center card-hover rounded-xl p-6 border border-gray-100');
+  card.innerHTML = `
     <img src="${m.photo}" alt="${m.name}" class="w-24 h-24 rounded-full object-cover mb-4 ring-2 ring-navy/10">
     <h3 class="font-semibold text-ink text-sm">${m.name}</h3>
     <p class="text-navy text-xs font-medium mt-0.5">${m.role}</p>
-    <p class="text-muted text-xs mt-1 mb-5 leading-relaxed">${m.area}</p>
-    <div class="flex gap-2 mt-auto">
-      <a href="${m.orcid||'#'}" target="_blank"
-         class="flex items-center gap-1.5 text-xs text-muted hover:text-navy transition-colors border border-gray-200 rounded-md px-3 py-1.5 hover:border-navy/30"
-         title="ResearchGate">
-        <img src="rg-logo.png" alt="RG" style="width:14px;height:14px;object-fit:contain;opacity:.6;">
-        <span>ResearchGate</span>
-      </a>
-      <a href="${m.scholar||'#'}" target="_blank"
-         class="flex items-center gap-1.5 text-xs text-muted hover:text-navy transition-colors border border-gray-200 rounded-md px-3 py-1.5 hover:border-navy/30"
-         title="Google Scholar">
-        <i data-lucide="graduation-cap" class="w-4 h-4"></i>
-        <span>Scholar</span>
-      </a>
-      <a href="${m.linkedin||'#'}" target="_blank"
-   class="flex items-center gap-1.5 text-xs text-muted hover:text-navy transition-colors border border-gray-200 rounded-md px-3 py-1.5 hover:border-navy/30"
-   title="LinkedIn">
-  <i data-lucide="linkedin" class="w-4 h-4"></i>
-  <span>LinkedIn</span>
-</a>
-    </div>`));
+    <p class="text-muted text-xs mt-1 mb-5 leading-relaxed">${m.area}</p>`;
+
+  // Botones de redes
+  const btns = el('div','flex gap-2 mt-auto flex-wrap justify-center');
+
+  // ResearchGate — imagen PNG
+  const rgBtn = document.createElement('a');
+  rgBtn.href = m.researchgate || '#';
+  rgBtn.target = '_blank';
+  rgBtn.title = 'ResearchGate';
+  rgBtn.className = 'member-btn';
+  rgBtn.innerHTML = `<img src="rg-logo.png" alt="RG"><span>ResearchGate</span>`;
+  btns.appendChild(rgBtn);
+
+  // Google Scholar — icono Lucide
+  const schBtn = document.createElement('a');
+  schBtn.href = m.scholar || '#';
+  schBtn.target = '_blank';
+  schBtn.title = 'Google Scholar';
+  schBtn.className = 'member-btn';
+  schBtn.innerHTML = `<i data-lucide="graduation-cap" style="width:13px;height:13px;flex-shrink:0"></i><span>Scholar</span>`;
+  btns.appendChild(schBtn);
+
+  // LinkedIn — icono Lucide
+  const liBtn = document.createElement('a');
+  liBtn.href = m.linkedin || '#';
+  liBtn.target = '_blank';
+  liBtn.title = 'LinkedIn';
+  liBtn.className = 'member-btn';
+  liBtn.innerHTML = `<i data-lucide="linkedin" style="width:13px;height:13px;flex-shrink:0"></i><span>LinkedIn</span>`;
+  btns.appendChild(liBtn);
+
+  card.appendChild(btns);
+  $('team-grid').appendChild(card);
 });
 
-// PROYECTOS
+// ── PROYECTOS ─────────────────────────────────
 $('proj-title').textContent    = D.projects.title;
 $('proj-subtitle').textContent = D.projects.subtitle;
 D.projects.items.forEach(p => {
@@ -424,16 +459,18 @@ D.projects.items.forEach(p => {
     <div class="flex flex-wrap gap-2">${p.tags.map(t=>`<span class="tag bg-navy/6 text-navy/70">${t}</span>`).join('')}</div>`));
 });
 
-// PUBLICACIONES
+// ── PUBLICACIONES — número correlativo desde data.js ──────────
 $('pub-title').textContent    = D.publications.title;
 $('pub-subtitle').textContent = D.publications.subtitle;
 $('pub-scholar').href         = D.publications.scholar_url;
-D.publications.items.forEach(p => {
+D.publications.items.forEach((p, idx) => {
+  // Usa p.number si está definido; si no, usa el índice correlativo (1, 2, 3...)
+  const num    = p.number !== undefined ? p.number : idx + 1;
   const href   = p.link || p.doi || '#';
   const volStr = p.volume ? ` · ${p.volume}` : '';
   $('pub-list').appendChild(el('div','flex gap-5 items-start p-5 rounded-xl border border-gray-100 card-hover bg-white',`
     <div class="shrink-0 w-12 h-12 rounded-lg bg-navy/8 flex items-center justify-center">
-      <span class="font-display text-lg font-bold text-navy">${p.year%100}</span>
+      <span class="font-display text-lg font-bold text-navy">${num}</span>
     </div>
     <div class="flex-1 min-w-0">
       <p class="text-xs text-muted mb-0.5">${p.authors}</p>
@@ -449,7 +486,7 @@ D.publications.items.forEach(p => {
     </div>`));
 });
 
-// VISUALIZADOR / RECURSOS
+// ── VISUALIZADOR / RECURSOS ───────────────────
 $('viz-title').textContent    = D.visualizer.title;
 $('viz-subtitle').textContent = D.visualizer.subtitle;
 $('viz-note').textContent     = D.visualizer.note;
@@ -485,17 +522,16 @@ D.visualizer.layers.forEach((app, idx) => {
   if (idx === 0) btn.click();
 });
 
-// FOOTER
+// ── FOOTER ────────────────────────────────────
 const fe = $('footer-email');
 fe.textContent = D.contact.email; fe.href = `mailto:${D.contact.email}`;
 $('footer-address').textContent = D.contact.address;
-$('footer-github').href    = D.contact.github       || '#';
-$('footer-scholar').href   = D.publications.scholar_url || '#';
-$('footer-rg').href        = D.contact.researchgate || '#';
-$('footer-linkedin').href  = D.contact.linkedin     || '#';
+$('footer-linkedin').href = D.contact.linkedin    || '#';
+$('footer-scholar').href  = D.contact.scholar     || D.publications.scholar_url || '#';
+$('footer-rg').href       = D.contact.researchgate || '#';
 $('footer-year').textContent = new Date().getFullYear();
 
-// Lucide icons
+// ── Lucide icons (doble pasada para contenido dinámico) ────────
 lucide.createIcons();
 setTimeout(() => lucide.createIcons(), 150);
 </script>
