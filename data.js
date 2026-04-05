@@ -6,7 +6,6 @@
 
 const SITE_DATA = {
 
-  // ── META ──────────────────────────────────────────────────
   meta: {
     title: "Lab. Epidemiología Espacial",
     description: "Laboratorio de Epidemiología Espacial — Análisis espacial para la salud pública.",
@@ -14,13 +13,16 @@ const SITE_DATA = {
   },
 
   // ── LOGOS ─────────────────────────────────────────────────
+  //  nav    = logo del navbar (logo1)
+  //  hero   = logo grande del inicio orbitando (logo2)
+  //  footer = logo del footer, idealmente PNG con fondo transparente (logo3)
+  // ──────────────────────────────────────────────────────────
   logos: {
-    nav:    "logo.png",    // logo1 — aparece en el navbar (header)
-    hero:   "logo2.png",            // logo2 — aparece en el hero/inicio (el grande orbitando). Si está vacío usa logo1
-    footer: "logo3.png"             // logo3 — aparece en el footer (sin fondo). Si está vacío usa logo1
+    nav:    "logo.png",
+    hero:   "logo2.png",
+    footer: "logo3.png"
   },
 
-  // ── NAVEGACIÓN ────────────────────────────────────────────
   nav: {
     links: [
       { label: "Inicio",        href: "#inicio" },
@@ -31,7 +33,6 @@ const SITE_DATA = {
     ]
   },
 
-  // ── HERO (INICIO) ─────────────────────────────────────────
   hero: {
     tag: "Laboratorio de",
     title: "Epidemiología \nEspacial",
@@ -45,7 +46,6 @@ const SITE_DATA = {
     ]
   },
 
-  // ── LÍNEAS DE INVESTIGACIÓN ───────────────────────────────
   research_lines: {
     title: "Líneas de Investigación",
     subtitle: "Abordamos la salud desde una perspectiva territorial, combinando métodos cuantitativos avanzados con evidencia para la toma de decisiones.",
@@ -68,7 +68,6 @@ const SITE_DATA = {
     ]
   },
 
-  // ── INTEGRANTES ───────────────────────────────────────────
   team: {
     title: "Integrantes",
     subtitle: "Un equipo interdisciplinario que combina epidemiología, geografía, estadística y ciencias de la computación.",
@@ -130,7 +129,6 @@ const SITE_DATA = {
     ]
   },
 
-  // ── PROYECTOS ─────────────────────────────────────────────
   projects: {
     title: "Proyectos",
     subtitle: "Investigación financiada por fondos nacionales e internacionales orientada a generar evidencia de impacto en política sanitaria.",
@@ -165,10 +163,6 @@ const SITE_DATA = {
     ]
   },
 
-  // ── PUBLICACIONES ─────────────────────────────────────────
-  //  Agrega "number" para el correlativo que aparece a la izquierda.
-  //  Puedes usar 1, 2, 3... o cualquier string como "1." o "P1".
-  // ──────────────────────────────────────────────────────────
   publications: {
     title: "Publicaciones",
     subtitle: "Selección de publicaciones recientes en revistas indexadas. Para la lista completa, consulta el perfil en Google Scholar.",
@@ -183,12 +177,9 @@ const SITE_DATA = {
         link: "https://www.nature.com/articles/s41598-026-36462-w",
         tags: ["Q1", "Factor de impacto 3.9"]
       }
-      // Para agregar más publicaciones, copia el bloque anterior y cambia los campos.
-      // El campo "number" es el correlativo que aparece a la izquierda de cada publicación.
     ]
   },
 
-  // ── VISUALIZADOR / RECURSOS (apps Shiny) ──────────────────
   visualizer: {
     title: "Visualizador de Datos",
     subtitle: "Explora nuestros datos geoespaciales de manera interactiva. Selecciona una aplicación para visualizar en el visor.",
@@ -218,14 +209,13 @@ const SITE_DATA = {
     note: "Las aplicaciones se cargan desde shinyapps.io. Si aparece el mensaje 'próximamente', agrega la URL en data.js → shiny_url."
   },
 
-  // ── CONTACTO / FOOTER ─────────────────────────────────────
   contact: {
     email: "salvadorayala@udd.cl",
     address: "Facultad de Medicina-Clínica Alemana, Universidad del Desarrollo\nAv. La Plaza 680, Santiago, Chile",
-    linkedin:    "https://www.linkedin.com/in/salvador-ayala-pizarro-70a83b7a/",
-    scholar:     "https://scholar.google.com/citations?user=0Fu4x2MAAAAJ&hl=es",
-    researchgate:"https://www.researchgate.net/profile/Salvador_Ayala",
-    github: "https://github.com/sayala-spepi",
+    linkedin:     "https://www.linkedin.com/in/salvador-ayala-pizarro-70a83b7a/",
+    scholar:      "https://scholar.google.com/citations?user=0Fu4x2MAAAAJ&hl=es",
+    researchgate: "https://www.researchgate.net/profile/Salvador_Ayala",
+    github:       "https://github.com/sayala-spepi"
   }
 
 };
