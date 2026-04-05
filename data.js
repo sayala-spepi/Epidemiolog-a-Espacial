@@ -146,8 +146,8 @@ const SITE_DATA = {
         year: "2025–2026",
         funder: "Proyecto Interuniversitario",
         role: "Investigador co-Principal",
-        title: "REDES+: Efectos de la exposición a la contaminación del aire en la inasistencia escolar: Interacción con factores ambientales y su resultado en el rendimiento académico en colegios del Gran Santiago",
-        desc: "Proyecto interdisciplinar para evaluar la exposición a contaminantes del aire en escuelas públicas del Gran Santiago. Coordinado entre investigadores de la Universidad del Desarrollo, Universidad Adolfo Ibáñez y la Universidad Mayor.",
+        title: "REDES+: Efectos de la exposición a la contaminación atmosférica en la inasistencia escolar: Interacción con factores ambientales y su resultado en el rendimiento académico en colegios del Gran Santiago",
+        desc: "Proyecto interdisciplinar para evaluar la exposición a contaminantes atmosférica en escuelas públicas del Gran Santiago. Coordinado entre investigadores de la Universidad del Desarrollo, Universidad Adolfo Ibáñez y la Universidad Mayor.",
         tags: ["PM2.5", "PurpleAir", "Educación", "Geoestadística"]
       }
     ]
@@ -210,7 +210,8 @@ const SITE_DATA = {
     email: "salvadorayala@udd.cl",
     address: "Facultad de Medicina-Clínica Alemana, Universidad del Desarrollo\nAv. La Plaza 680, Santiago, Chile",
     github: "https://github.com/sayala-spepi",
-    researchgate: "https://www.researchgate.net/profile/Salvador_Ayala"
+    researchgate: "https://www.researchgate.net/profile/Salvador_Ayala",
+    linkedin: "https://www.linkedin.com/in/salvador-ayala-pizarro-70a83b7a/"    // ← pega aquí tu URL de LinkedIn, ej: "https://www.linkedin.com/in/tu-usuario"
   }
 
 };
