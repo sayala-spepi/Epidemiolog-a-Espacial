@@ -21,7 +21,7 @@ const SITE_DATA = {
       { label: "Integrantes",   href: "#integrantes" },
       { label: "Proyectos",     href: "#proyectos" },
       { label: "Publicaciones", href: "#publicaciones" },
-      { label: "Visualizador",  href: "#visualizador" }
+      { label: "Recursos",  href: "#visualizador" }
     ]
   },
 
