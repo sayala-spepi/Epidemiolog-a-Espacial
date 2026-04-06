@@ -212,7 +212,7 @@
 <!-- ╔══════════════════════════════════════════╗ -->
 <!-- ║  RECURSOS — Visualizador Shiny           ║ -->
 <!-- ╚══════════════════════════════════════════╝ -->
-<section id="Recursos" class="py-24 bg-sand">
+<section id="visualizadores" class="py-24 bg-sand">
   <div class="max-w-6xl mx-auto px-6">
     <div class="max-w-xl mb-12 section-fade">
       <h2 id="viz-title"    class="font-display text-4xl font-bold text-ink mb-4"></h2>
@@ -334,7 +334,7 @@ window.addEventListener('scroll', () => {
 });
 
 // Active nav
-const sectionIds = ['inicio','investigacion','integrantes','proyectos','publicaciones','Recursos'];
+const sectionIds = ['inicio','investigacion','integrantes','proyectos','publicaciones','visualizadores'];
 window.addEventListener('scroll', () => {
   const y = window.scrollY + 120;
   sectionIds.forEach(id => {
@@ -378,7 +378,7 @@ drawFooterLogo(D.logos.footer || D.logos.nav || 'logo.png');
 // ── NAV ───────────────────────────────────────
 const sectionMap = {
   'Inicio':'inicio','Integrantes':'integrantes','Proyectos':'proyectos',
-  'Publicaciones':'publicaciones','Recursos':'Recursos'
+  'Publicaciones':'publicaciones','Visualizadores':'visualizadores'
 };
 D.nav.links.forEach(link => {
   const sid = sectionMap[link.label] || link.href.replace('#','');
