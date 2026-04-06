@@ -363,27 +363,15 @@ const D = SITE_DATA;
 $('nav-logo').src  = D.logos.nav  || 'logo.png';
 $('hero-logo').src = D.logos.hero || D.logos.nav || 'logo.png';
 
-// Footer logo — dibujado en canvas para evitar el fondo de tablero
-// Usamos compositing: dibuja el PNG en negro/blanco sobre fondo transparente del canvas
+// Footer logo
 function drawFooterLogo(src) {
   const canvas = $('footer-canvas');
   canvas.style.display = 'none';
   const img = document.createElement('img');
   img.src = src;
-  img.style.cssText = 'height:80px;width:auto;display:block;margin-bottom:20px;';
   img.alt = 'Logo';
+  img.style.cssText = 'height:80px;width:auto;display:block;margin-bottom:20px;';
   canvas.parentNode.insertBefore(img, canvas);
-}
-drawFooterLogo(D.logos.footer || D.logos.nav || 'logo.png');
-  img.onerror = () => {
-    // Si falla canvas, mostrar img normal con invert
-    canvas.style.display = 'none';
-    const fallback = document.createElement('img');
-    fallback.src = src;
-    fallback.style.cssText = 'height:80px;width:auto;display:block;margin-bottom:20px;filter:invert(1);';
-    canvas.parentNode.insertBefore(fallback, canvas);
-  };
-  img.src = src;
 }
 drawFooterLogo(D.logos.footer || D.logos.nav || 'logo.png');
 
