@@ -85,7 +85,7 @@ const SITE_DATA = {
         name: "Mg. Ismael Bravo",
         role: "Investigador asistente",
         area: "Estadística · Modelos",
-        photo: "https://i.pravatar.cc/200?img=12",
+        photo: "imagen.png",
         researchgate: "#",
         scholar: "#",
         linkedin: "#"
@@ -94,7 +94,7 @@ const SITE_DATA = {
         name: "Mg. Jesús Guerrero-Muñoz",
         role: "Tesista Doctoral",
         area: "Bioquímica · Biologóa Molecular",
-        photo: "https://i.pravatar.cc/200?img=32",
+        photo: "imagen.png",
         researchgate: "https://www.researchgate.net/profile/Jesus-Guerrero-Munoz?ev=hdr_xprf",
         scholar: "https://scholar.google.com/citations?view_op=list_works&hl=es&user=xMi_ZzwAAAAJ",
         linkedin: "https://www.linkedin.com/in/bq-jgmunoz/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
@@ -103,7 +103,7 @@ const SITE_DATA = {
         name: "Mg. Jorge Cárdenas Pizarro",
         role: "Tesista Magíster",
         area: "Gobernanza · Analísis Espacial",
-        photo: "https://i.pravatar.cc/200?img=32",
+        photo: "jorge_cardenas.png",
         researchgate: "https://www.researchgate.net/profile/Jorge-Cardenas-Pizarro?ev=hdr_xprf",
         scholar: "https://scholar.google.com/citations?user=dKz40iMAAAAJ&hl=es",
         linkedin: "linkedin.com/in/jorge-eduardo-cárdenas-pizarro-b9b048146"
@@ -112,7 +112,7 @@ const SITE_DATA = {
         name: "Lic. xx",
         role: "Tesista Doctoral",
         area: "Desigualdades en Salud · APS",
-        photo: "https://i.pravatar.cc/200?img=44",
+        photo: "imagen.png",
         researchgate: "#",
         scholar: "#",
         linkedin: "#"
@@ -121,7 +121,7 @@ const SITE_DATA = {
         name: "Lic. xx",
         role: "Tesista Magíster",
         area: "Enfermedades Vectoriales · SIG",
-        photo: "https://i.pravatar.cc/200?img=22",
+        photo: "imagen.png",
         researchgate: "#",
         scholar: "#",
         linkedin: "#"
