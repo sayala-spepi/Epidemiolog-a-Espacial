@@ -82,31 +82,31 @@ const SITE_DATA = {
         linkedin: "https://www.linkedin.com/in/salvador-ayala-pizarro-70a83b7a/"
       },
       {
-        name: "Dr. xx",
-        role: "Investigador",
-        area: "Estadística Espacial · SIG",
+        name: "Mg. Ismael Bravo",
+        role: "Investigador asistente",
+        area: "Estadística · Modelos",
         photo: "https://i.pravatar.cc/200?img=12",
         researchgate: "#",
         scholar: "#",
         linkedin: "#"
       },
       {
-        name: "Mg. xx",
-        role: "Investigadora",
-        area: "Salud Ambiental · Calor Urbano",
+        name: "Mg. Jesús Guerrero-Muñoz",
+        role: "Tesista Doctoral",
+        area: "Bioquímica · Biologóa Molecular",
         photo: "https://i.pravatar.cc/200?img=32",
-        researchgate: "#",
-        scholar: "#",
-        linkedin: "#"
+        researchgate: "https://www.researchgate.net/profile/Jesus-Guerrero-Munoz?ev=hdr_xprf",
+        scholar: "https://scholar.google.com/citations?view_op=list_works&hl=es&user=xMi_ZzwAAAAJ",
+        linkedin: "https://www.linkedin.com/in/bq-jgmunoz/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
       },
       {
-        name: "Mg. xx",
-        role: "Investigador",
-        area: "Ciencia de Datos · Machine Learning",
-        photo: "https://i.pravatar.cc/200?img=15",
-        researchgate: "#",
-        scholar: "#",
-        linkedin: "#"
+        name: "Mg. Jorge Cárdenas Pizarro",
+        role: "Tesista Magíster",
+        area: "Gobernanza · Analísis Espacial",
+        photo: "https://i.pravatar.cc/200?img=32",
+        researchgate: "https://www.researchgate.net/profile/Jorge-Cardenas-Pizarro?ev=hdr_xprf",
+        scholar: "https://scholar.google.com/citations?user=dKz40iMAAAAJ&hl=es",
+        linkedin: "linkedin.com/in/jorge-eduardo-cárdenas-pizarro-b9b048146"
       },
       {
         name: "Lic. xx",
