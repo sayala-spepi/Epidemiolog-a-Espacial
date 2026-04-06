@@ -85,7 +85,7 @@ const SITE_DATA = {
         name: "Mg. Ismael Bravo",
         role: "Investigador asistente",
         area: "Estadística · Modelos",
-        photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/imagen.png?raw=true",
+        photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/ismael_bravo.png?raw=true",
         researchgate: "#",
         scholar: "#",
         linkedin: "#"
