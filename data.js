@@ -206,7 +206,7 @@ const SITE_DATA = {
         description: "Efectos de los vecindarios como determinante social de salud en el Área Metropolitana del Gran Santiago."
       }
     ],
-    note: "Las aplicaciones se cargan desde shinyapps.io. Si aparece el mensaje 'próximamente', agrega la URL en data.js → shiny_url."
+    note: "Las aplicaciones se encuentran en desarrollo"
   },
 
   contact: {
