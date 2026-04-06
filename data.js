@@ -171,7 +171,7 @@ const SITE_DATA = {
       {
         number: 1,
         year: 2026,
-        authors: "Ayala S, et al.",
+        authors: "<b>S Ayala</b>, N Escobar, L Vizeu Barrozo, F Chiaravalloti-Neto, M Canals",
         title: "Spatial neighborhood patterns of pulmonary tuberculosis in a large urban area: the case of Santiago, Chile",
         journal: "Scientific Reports",
         link: "https://www.nature.com/articles/s41598-026-36462-w",
