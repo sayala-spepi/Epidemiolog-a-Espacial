@@ -29,14 +29,14 @@ const SITE_DATA = {
       { label: "Integrantes",   href: "#integrantes" },
       { label: "Proyectos",     href: "#proyectos" },
       { label: "Publicaciones", href: "#publicaciones" },
-      { label: "Recursos",      href: "#Recursos" }
+      { label: "Visualizadores",href: "#Visualizadores" }
     ]
   },
 
   hero: {
     tag: "Laboratorio de",
     title: "Epidemiología \nEspacial",
-    subtitle: "Integramos el análisis espacial y datos de salud pública para identificar patrones territoriales de enfermedad, desigualdad y exposición ambiental.",
+    subtitle: "El Laboratorio de Epidemiología Espacial busca integrar herramientas de análisis espacial y datos de salud pública para identificar patrones territoriales en la distribución de enfermedades, inequidad territorial y exposición a contaminantes ambiental.\n El laboratorio busca aplicar y explorar técnicas de análisis avanzado para la resolución de problemas en salud, para lo cual colaboramos con centros de investigación nacional e internacionales.",
     cta_primary:   { label: "Contáctanos",   href: "#contacto" },
     cta_secondary: { label: "Ver proyectos", href: "#proyectos" },
     stats: [
@@ -70,7 +70,7 @@ const SITE_DATA = {
 
   team: {
     title: "Integrantes",
-    subtitle: "Un equipo interdisciplinario que combina epidemiología, geografía, estadística y ciencias de la computación.",
+    subtitle: "El laboratorio se compone de un equipo interdisciplinario que combina la Epidemiología, Geografía y la Estadística. También contamos con alumnos de Pregrado, Magíster y Doctorado. \n Para desarrollar trabajos de tesis de pre o posgrado, o propuestas de investigación al interior del laboratorio, puedes contactarnos en la sección de contactos",
     members: [
       {
         name: "Dr. Salvador Ayala Pizarro",
