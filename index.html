@@ -367,22 +367,14 @@ $('hero-logo').src = D.logos.hero || D.logos.nav || 'logo.png';
 // Usamos compositing: dibuja el PNG en negro/blanco sobre fondo transparente del canvas
 function drawFooterLogo(src) {
   const canvas = $('footer-canvas');
-  const img = new Image();
-  img.crossOrigin = 'anonymous';
-  img.onload = () => {
-    // Escalar manteniendo proporción, altura máxima 80px
-    const ratio = img.width / img.height;
-    canvas.height = 80;
-    canvas.width  = Math.round(80 * ratio);
-    const ctx = canvas.getContext('2d');
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    // Dibujar imagen normal
-    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-    // Aplicar efecto: convertir a blanco usando compositing
-    ctx.globalCompositeOperation = 'source-in';
-    ctx.fillStyle = 'white';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-  };
+  canvas.style.display = 'none';
+  const img = document.createElement('img');
+  img.src = src;
+  img.style.cssText = 'height:80px;width:auto;display:block;margin-bottom:20px;';
+  img.alt = 'Logo';
+  canvas.parentNode.insertBefore(img, canvas);
+}
+drawFooterLogo(D.logos.footer || D.logos.nav || 'logo.png');
   img.onerror = () => {
     // Si falla canvas, mostrar img normal con invert
     canvas.style.display = 'none';
