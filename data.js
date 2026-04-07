@@ -109,18 +109,18 @@ const SITE_DATA = {
         linkedin: "linkedin.com/in/jorge-eduardo-cárdenas-pizarro-b9b048146"
       },
       {
-        name: "Lic. Hector Spring Pedreros",
+        name: "Lic. Héctor Spring Pedreros",
         role: "Tesista Pregrado",
-        area: "Desigualdades en Salud · APS",
+        area: "Ingeniería Civil en Geografía",
         photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/hector_spring.png?raw=true",
         researchgate: "#",
         scholar: "#",
         linkedin: "https://www.linkedin.com/in/h%C3%A9ctor-spring-pedreros-70197822b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
       },
       {
-        name: "Lic. xx",
-        role: "Tesista Magíster",
-        area: "Enfermedades Vectoriales · SIG",
+        name: "Lic. Noemí Concha",
+        role: "Tesista Pregrado",
+        area: "Ingeniería Civil en Geografía",
         photo: "imagen.png",
         researchgate: "#",
         scholar: "#",
