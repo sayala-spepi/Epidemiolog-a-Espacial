@@ -36,7 +36,7 @@ const SITE_DATA = {
   hero: {
     tag: "Laboratorio de",
     title: "Epidemiología \nEspacial",
-    subtitle: "El Laboratorio de Epidemiología Espacial busca integrar herramientas de análisis espacial y datos de salud pública para identificar patrones territoriales en la distribución de enfermedades, inequidad territorial y exposición a contaminantes ambiental.\n El laboratorio busca aplicar y explorar técnicas de análisis avanzado para la resolución de problemas en salud, para lo cual colaboramos con centros de investigación nacional e internacionales.",
+    subtitle: "El Laboratorio de Epidemiología Espacial busca integrar herramientas de análisis espacial y datos de salud pública para identificar patrones territoriales en la distribución de enfermedades, inequidad territorial y exposición a contaminantes ambientales. Buscamos aplicar y explorar técnicas de análisis avanzado para la resolución de problemas en salud, colaborando con centros de investigación nacionales e internacionales.",
     cta_primary:   { label: "Contáctanos",   href: "#contacto" },
     cta_secondary: { label: "Ver proyectos", href: "#proyectos" },
     stats: [
@@ -70,7 +70,7 @@ const SITE_DATA = {
 
   team: {
     title: "Integrantes",
-    subtitle: "El laboratorio se compone de un equipo interdisciplinario que combina la Epidemiología, Geografía y la Estadística. También contamos con alumnos de Pregrado, Magíster y Doctorado. \n Para desarrollar trabajos de tesis de pre o posgrado, o propuestas de investigación al interior del laboratorio, puedes contactarnos en la sección de contactos",
+    subtitle: "El laboratorio se compone de un equipo interdisciplinario de investigadores que combina la Geografía, la Epidemiología, la Salud Pública y la Estadística, integrando estudiantes de Pregrado, Magíster y Doctorado. Para desarrollar trabajos de tesis de pregrado, posgrado o propuestas de investigación al interior del laboratorio, puedes contactarnos en la sección de contacto.",
     members: [
       {
         name: "Dr. Salvador Ayala Pizarro",
@@ -131,7 +131,7 @@ const SITE_DATA = {
 
   projects: {
     title: "Proyectos",
-    subtitle: "Investigación financiada por fondos nacionales e internacionales orientada a generar evidencia de impacto en política sanitaria.",
+    subtitle: "Revisa nuestros proyectos de investigación financiada por fondos nacionales e internacionales orientados a generar evidencia de impacto en política sanitaria.",
     items: [
       {
         status: "En curso",
@@ -165,7 +165,7 @@ const SITE_DATA = {
 
   publications: {
     title: "Publicaciones",
-    subtitle: "Selección de publicaciones recientes en revistas indexadas. Para la lista completa, consulta el perfil en Google Scholar.",
+    subtitle: "Selección de publicaciones recientes en revistas indexadas. Para revisar el listado completo de publicaciones asociadas al laboratorio, consultar el perfil de Google Scholar.",
     scholar_url: "https://scholar.google.com/citations?user=0Fu4x2MAAAAJ&hl=es",
     items: [
       {
@@ -206,7 +206,7 @@ const SITE_DATA = {
         description: "Efectos de los vecindarios como determinante social de salud en el Área Metropolitana del Gran Santiago."
       }
     ],
-    note: "Las aplicaciones se encuentran en desarrollo"
+    note: "Aplicaciones en desarrollo"
   },
 
   contact: {
