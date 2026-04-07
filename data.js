@@ -75,7 +75,7 @@ const SITE_DATA = {
       {
         name: "Dr. Salvador Ayala Pizarro",
         role: "Investigador Principal",
-        area: "Epidemiología Espacial · Epidemiología Ambiental · Clima & Salud",
+        area: "MPH., PhD. Salud Pública",
         photo: "https://medicina.udd.cl/centro-epidemiologia-politicas-salud/files/2024/10/salvador-ayala-rb_.png",
         researchgate: "https://www.researchgate.net/profile/Salvador_Ayala",
         scholar: "https://scholar.google.com/citations?user=0Fu4x2MAAAAJ&hl=es",
@@ -84,7 +84,7 @@ const SITE_DATA = {
       {
         name: "Mg. Ismael Bravo",
         role: "Investigador asistente",
-        area: "Estadística · Modelos",
+        area: "Magíster en Estadística",
         photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/ismael_bravo.png?raw=true",
         researchgate: "#",
         scholar: "#",
@@ -93,7 +93,7 @@ const SITE_DATA = {
       {
         name: "Mg. Jesús Guerrero-Muñoz",
         role: "Tesista Doctoral",
-        area: "Bioquímica · Biologóa Molecular",
+        area: "Doctorado en Ciencias e Innovación en Medicina",
         photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/jesus_guerrero.png?raw=true",
         researchgate: "https://www.researchgate.net/profile/Jesus-Guerrero-Munoz?ev=hdr_xprf",
         scholar: "https://scholar.google.com/citations?view_op=list_works&hl=es&user=xMi_ZzwAAAAJ",
@@ -102,7 +102,7 @@ const SITE_DATA = {
       {
         name: "Mg. Jorge Cárdenas Pizarro",
         role: "Tesista Magíster",
-        area: "Gobernanza · Analísis Espacial",
+        area: "Magíster Gobernanza de Riesgos y Recursos",
         photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/jorge_cardenas.png?raw=true",
         researchgate: "https://www.researchgate.net/profile/Jorge-Cardenas-Pizarro?ev=hdr_xprf",
         scholar: "https://scholar.google.com/citations?user=dKz40iMAAAAJ&hl=es",
