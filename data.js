@@ -109,13 +109,13 @@ const SITE_DATA = {
         linkedin: "linkedin.com/in/jorge-eduardo-cárdenas-pizarro-b9b048146"
       },
       {
-        name: "Lic. xx",
-        role: "Tesista Doctoral",
+        name: "Lic. Hector Spring Pedreros",
+        role: "Tesista Pregrado",
         area: "Desigualdades en Salud · APS",
-        photo: "imagen.png",
+        photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/hector_spring.png?raw=true",
         researchgate: "#",
         scholar: "#",
-        linkedin: "#"
+        linkedin: "https://www.linkedin.com/in/h%C3%A9ctor-spring-pedreros-70197822b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
       },
       {
         name: "Lic. xx",
