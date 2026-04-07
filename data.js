@@ -94,7 +94,7 @@ const SITE_DATA = {
         name: "Mg. Jesús Guerrero-Muñoz",
         role: "Tesista Doctoral",
         area: "Bioquímica · Biologóa Molecular",
-        photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/imagen.png?raw=true",
+        photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/jesus_guerrero.png?raw=true",
         researchgate: "https://www.researchgate.net/profile/Jesus-Guerrero-Munoz?ev=hdr_xprf",
         scholar: "https://scholar.google.com/citations?view_op=list_works&hl=es&user=xMi_ZzwAAAAJ",
         linkedin: "https://www.linkedin.com/in/bq-jgmunoz/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
