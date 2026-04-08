@@ -139,7 +139,7 @@ const SITE_DATA = {
         funder: "ANID FONDECYT Regular",
         role: "Investigador Principal",
         title: "Evaluation of neighborhoods as a social determinant of health in Chile: the case of pulmonary tuberculosis",
-        desc: "Evaluación del efecto de los vecindarios en la transmisión de tuberculosis pulmonar al interior del Área Metropolitana del Gran Santiago, Chile.",
+        desc: "El objetivo del presente proyecto es evaluar la relación espacio-temporal entre los barrios (en cuanto a su composición socioeconómica, demográfica, ambiental, de infraestructuras y cultural) y el riesgo individual de padecer tuberculosis pulmonar en el Área Metropolitana de Santiago, la principal zona urbana de Chile.",
         tags: ["Tuberculosis", "Mortalidad", "Neighborhoods", "Epidemiología"]
       },
       {
@@ -148,7 +148,7 @@ const SITE_DATA = {
         funder: "ANID FONIS",
         role: "Investigador Principal",
         title: "Estimación espacial del riesgo de Tuberculosis pulmonar por áreas pequeñas en Chile.",
-        desc: "Elaboración de un listado de priorización y atlas de distribución de casos de tuberculosis pulmonar para todo Chile.",
+        desc: "Evaluar el riesgo de Tuberculosis pulmonar por distritos censales y las características sociodemográficas asociadas para todas las regiones del país entre los años 2016 y 2023.",
         tags: ["Tuberculosis", "Atlas", "Áreas pequeñas", "Geografía"]
       },
       {
@@ -157,7 +157,7 @@ const SITE_DATA = {
         funder: "Proyecto Interuniversitario",
         role: "Investigador co-Principal",
         title: "REDES+: Efectos de la exposición a la contaminación atmosférica en la inasistencia escolar",
-        desc: "Proyecto interdisciplinar para evaluar la exposición a contaminantes atmosférica en escuelas públicas del Gran Santiago. Coordinado entre investigadores de la Universidad del Desarrollo, Universidad Adolfo Ibáñez y la Universidad Mayor.",
+        desc: "Evaluar el potencial efecto mediador de la asistencia escolar entre la exposición a factores ambientales de establecimientos educacionales (i.e., material particulado, temperatura, vegetación) sobre el rendimiento académico de escolares en la Región Metropolitana. Coordinado entre investigadores de la Universidad del Desarrollo, Universidad Adolfo Ibáñez y la Universidad Mayor.",
         tags: ["PM2.5", "PurpleAir", "Educación", "Geoestadística"]
       }
     ]
