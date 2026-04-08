@@ -154,8 +154,8 @@ const SITE_DATA = {
       {
         status: "En curso",
         year: "2025–2026",
-        funder: "Proyecto Interuniversitario",
-        role: "Investigador co-Principal",
+        funder: "Proyecto Interuniversitario. UDD - UAI - U.Mayor",
+        role: "Investigador Principal (UDD)",
         title: "REDES+: Efectos de la exposición a la contaminación atmosférica en la inasistencia escolar",
         desc: "Evaluar el potencial efecto mediador de la asistencia escolar entre la exposición a factores ambientales de establecimientos educacionales (i.e., material particulado, temperatura, vegetación) sobre el rendimiento académico de escolares en la Región Metropolitana. Coordinado entre investigadores de la Universidad del Desarrollo, Universidad Adolfo Ibáñez y la Universidad Mayor.",
         tags: ["PM2.5", "PurpleAir", "Educación", "Geoestadística"]
