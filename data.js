@@ -42,7 +42,7 @@ const SITE_DATA = {
     stats: [
       { value: "3+", label: "Proyectos activos" },
       { value: "1",  label: "Publicaciones" },
-      { value: "3",  label: "Países" }
+      { value: "8+",  label: "Integrantes" }
     ]
   },
 
