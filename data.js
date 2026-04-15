@@ -88,7 +88,7 @@ const SITE_DATA = {
         photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/ismael_bravo.png?raw=true",
         researchgate: "#",
         scholar: "#",
-        linkedin: "#"
+        linkedin: "https://www.linkedin.com/in/ismael-bravo-rodríguez-7769b2206/"
       },
       {
         name: "Mg. Jesús Guerrero-Muñoz",
