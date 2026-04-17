@@ -74,7 +74,7 @@ const SITE_DATA = {
     members: [
       {
         name: "Dr. Salvador Ayala Pizarro",
-        role: "Investigador Principal",
+        role: "Investigador Principal - CEPS-UDD",
         area: "MPH., PhD. Salud Pública",
         photo: "https://medicina.udd.cl/centro-epidemiologia-politicas-salud/files/2024/10/salvador-ayala-rb_.png",
         researchgate: "https://www.researchgate.net/profile/Salvador_Ayala",
@@ -84,7 +84,7 @@ const SITE_DATA = {
       {
         name: "Mg. Ismael Bravo",
         role: "Investigador asistente",
-        area: "Magíster en Estadística",
+        area: "Magíster en Estadística, PUC",
         photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/ismael_bravo.png?raw=true",
         researchgate: "#",
         scholar: "#",
@@ -92,7 +92,7 @@ const SITE_DATA = {
       },
       {
         name: "Mg. Jesús Guerrero-Muñoz",
-        role: "Tesista Doctoral",
+        role: "Tesista Doctoral - UDD",
         area: "Doctorado en Ciencias e Innovación en Medicina",
         photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/jesus_guerrero.png?raw=true",
         researchgate: "https://www.researchgate.net/profile/Jesus-Guerrero-Munoz?ev=hdr_xprf",
@@ -101,7 +101,7 @@ const SITE_DATA = {
       },
       {
         name: "Mg. Jorge Cárdenas Pizarro",
-        role: "Tesista Magíster",
+        role: "Tesista Magíster - PUC - Heidelberg",
         area: "Magíster Gobernanza de Riesgos y Recursos",
         photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/jorge_cardenas.png?raw=true",
         researchgate: "https://www.researchgate.net/profile/Jorge-Cardenas-Pizarro?ev=hdr_xprf",
@@ -110,7 +110,7 @@ const SITE_DATA = {
       },
       {
         name: "Lic. Héctor Spring Pedreros",
-        role: "Tesista Pregrado",
+        role: "Tesista Pregrado - USACH",
         area: "Ingeniería Civil en Geografía",
         photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/hector_spring.png?raw=true",
         researchgate: "#",
@@ -119,7 +119,7 @@ const SITE_DATA = {
       },
       {
         name: "Lic. Noemí Concha",
-        role: "Tesista Pregrado",
+        role: "Tesista Pregrado - USACH",
         area: "Ingeniería Civil en Geografía",
         photo: "imagen.png",
         researchgate: "#",
