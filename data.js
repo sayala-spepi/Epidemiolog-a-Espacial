@@ -91,6 +91,15 @@ const SITE_DATA = {
         linkedin: "https://www.linkedin.com/in/ismael-bravo-rodríguez-7769b2206/"
       },
       {
+        name: "Mg. José Daniel Conejeros",
+        role: "Investigador asistente",
+        area: "Magíster en Estadística, PUC",
+        photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/jose_conejeros.png?raw=true",
+        researchgate: "#",
+        scholar: "#",
+        linkedin: "https://www.linkedin.com/in/joseconejerosp/"
+      },
+      {
         name: "Mg. Jesús Guerrero-Muñoz",
         role: "Tesista Doctoral - UDD",
         area: "Doctorado en Ciencias e Innovación en Medicina",
