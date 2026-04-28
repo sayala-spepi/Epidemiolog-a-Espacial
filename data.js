@@ -76,7 +76,7 @@ const SITE_DATA = {
         name: "Dr. Salvador Ayala Pizarro",
         role: "Investigador Principal - CEPS-UDD",
         area: "MPH., PhD. Salud Pública",
-        photo: "https://medicina.udd.cl/centro-epidemiologia-politicas-salud/files/2024/10/salvador-ayala-rb_.png",
+        photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/foto%20bn.jpg?raw=true",
         researchgate: "https://www.researchgate.net/profile/Salvador_Ayala",
         scholar: "https://scholar.google.com/citations?user=0Fu4x2MAAAAJ&hl=es",
         linkedin: "https://www.linkedin.com/in/salvador-ayala-pizarro-70a83b7a/"
