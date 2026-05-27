@@ -1,14 +1,14 @@
-Fecha de creación: DD-MM-AAAA
+Fecha de creación: 27-05-2026
 
-# Titulo:
+# Titulo: Sitio Web del Laboratorio de Epidemiología Espacial (ESPI-Lab) 
 
 ## Resumen
 
-Incluir un pequeño resumen explicando de que se trata el articulo/proyecto/repositorio 
+Repostirorio del seitio web del Laboratorio de Epidemiología Espacial. Cuenta con actualización continua. 
 
 ## Autores y contactos:
 
-:mailbox_with_mail: nombre (<correo@gmail.com>)
+:mailbox_with_mail: Salvador Ayala Pizarro (<salvadorayala@udd.cl>)
 
 ## Financiamiento
 **FONDECYT Regular Nº 1251995**: *Evaluation of Neighborhoods as a Social Determinant of Health in Chile: The Case of Pulmonary Tuberculosis*.
@@ -16,26 +16,23 @@ Incluir un pequeño resumen explicando de que se trata el articulo/proyecto/repo
 
 ## Objetivo
 
--Escribir el objetivo general de este proyecto/repositorio
+- Difundir los resultados y avances en la materia
 
 ## Fuente principal de datos:
-- Nombre - Link: (<link>) - Fecha de acceso (*[dd-mm-aaaa]*)
+- NA
 
 ## Métodos:
-### Área de estudio: *mencionar el área de análisis*
-### Unidad de análisis: *mencionar la unidad de análisis*
-### Periodo de análisis: *mencionar los años de análisis*
-### Variable respuesta: *mencionar la variable respuesta*
+### Área de estudio: Estudios de nivel pais, en distintas escalas.
+### Unidad de análisis: Diversidad de unidades (individuo/poblacional)
+### Periodo de análisis: NA
+### Variable respuesta: NA
 ### Covariables:
-- nombre (fuente)
-- nombre (fuente)
+- NA
 
 ### Análisis de datos
- - nombre del modelo
+ - NA
 
-### Workflow
-incluir la imagen del workflow con el gráfico de dependencias:
-- debe incluir los input, output, funciones, script
-
+### Flujo de trabajo
+NA
 
 .README basado en OSF (Open Science Fundation) y Cornell University templates. 
