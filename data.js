@@ -76,7 +76,7 @@ const SITE_DATA = {
         name: "Dr. Salvador Ayala Pizarro",
         role: "Investigador Principal - CEPS-UDD",
         area: "MPH., PhD. Salud Pública",
-        photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/foto%20bn.jpg?raw=true",
+        photo: "https://github.com/sayala-spepi/espi-lab/blob/main/imagenes/foto%20bn.jpg?raw=true",
         researchgate: "https://www.researchgate.net/profile/Salvador_Ayala",
         scholar: "https://scholar.google.com/citations?user=0Fu4x2MAAAAJ&hl=es",
         linkedin: "https://www.linkedin.com/in/salvador-ayala-pizarro-70a83b7a/"
@@ -85,7 +85,7 @@ const SITE_DATA = {
         name: "Mg. Ismael Bravo",
         role: "Investigador asistente",
         area: "Magíster en Estadística, PUC",
-        photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/ismael_bravo.png?raw=true",
+        photo: "https://github.com/sayala-spepi/espi-lab/blob/main/imagenes/ismael_bravo.png?raw=true",
         researchgate: "#",
         scholar: "#",
         linkedin: "https://www.linkedin.com/in/ismael-bravo-rodríguez-7769b2206/"
@@ -94,7 +94,7 @@ const SITE_DATA = {
         name: "Mg. José Daniel Conejeros",
         role: "Investigador asistente",
         area: "Magíster en Estadística, PUC",
-        photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/jose_conejeros.png?raw=true",
+        photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/imagenes/jose_conejeros.png?raw=true",
         researchgate: "#",
         scholar: "#",
         linkedin: "https://www.linkedin.com/in/joseconejerosp/"
@@ -103,7 +103,7 @@ const SITE_DATA = {
         name: "Mg. Jesús Guerrero-Muñoz",
         role: "Tesista Doctoral - UDD",
         area: "Doctorado en Ciencias e Innovación en Medicina",
-        photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/jesus_guerrero.png?raw=true",
+        photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/imagenes/jesus_guerrero.png?raw=true",
         researchgate: "https://www.researchgate.net/profile/Jesus-Guerrero-Munoz?ev=hdr_xprf",
         scholar: "https://scholar.google.com/citations?view_op=list_works&hl=es&user=xMi_ZzwAAAAJ",
         linkedin: "https://www.linkedin.com/in/bq-jgmunoz/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
@@ -112,7 +112,7 @@ const SITE_DATA = {
         name: "Mg. Jorge Cárdenas Pizarro",
         role: "Tesista Magíster - PUC - Heidelberg",
         area: "Magíster Gobernanza de Riesgos y Recursos",
-        photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/jorge_cardenas.png?raw=true",
+        photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/imagenes/jorge_cardenas.png?raw=true",
         researchgate: "https://www.researchgate.net/profile/Jorge-Cardenas-Pizarro?ev=hdr_xprf",
         scholar: "https://scholar.google.com/citations?user=dKz40iMAAAAJ&hl=es",
         linkedin: "linkedin.com/in/jorge-eduardo-cárdenas-pizarro-b9b048146"
@@ -121,7 +121,7 @@ const SITE_DATA = {
         name: "Lic. Héctor Spring Pedreros",
         role: "Tesista Pregrado - USACH",
         area: "Ingeniería Civil en Geografía",
-        photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/hector_spring.png?raw=true",
+        photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/imagenes/hector_spring.png?raw=true",
         researchgate: "#",
         scholar: "#",
         linkedin: "https://www.linkedin.com/in/h%C3%A9ctor-spring-pedreros-70197822b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
