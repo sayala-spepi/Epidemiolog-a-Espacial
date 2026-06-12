@@ -188,13 +188,13 @@ const SITE_DATA = {
   //  Agrega cada entrada con: title, authors, event
   // ──────────────────────────────────────────────────────────
   presentations: {
-    title: "Presentaciones - Cursos - Seminarios",
-    subtitle: "Participaciones en congresos, conferencias, cursos y seminarios del laboratorio.",
+    title: "Presentaciones",
+    subtitle: "Participaciones en congresos, conferencias, cursos y seminarios de integrantes-colaboradores del Laboratorio.",
     items: [
       {
-        title: "Epidemiología espacial aplicada a enfermedades infecciosas en contexto urbano",
-        authors: "S Ayala, J Guerrero-Muñoz",
-        event: "Congreso Chileno de Salud Pública · Santiago, Chile · 2024"
+        title: "Factores asociados con la distribución espacial de la Tuberculosis pulmonar en la Región Metropolitana de Santiago, Chile",
+        authors: "Ayala, S, Escobar, N, Canals, M",
+        event: "VIII Congreso Chileno de Salud Pública · X Congreso Chileno de Epidemiología. Valparaíso, Chile · 2025"
       }
     ]
   },
