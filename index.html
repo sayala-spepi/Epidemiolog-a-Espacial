@@ -153,7 +153,6 @@
         <a id="hero-cta-primary"   href="#" class="px-6 py-3 bg-navy text-white text-sm font-semibold rounded-lg hover:bg-navy-light transition-colors"></a>
         <a id="hero-cta-secondary" href="#" class="px-6 py-3 border border-navy/30 text-navy text-sm font-semibold rounded-lg hover:border-navy/60 transition-colors"></a>
       </div>
-      <div id="hero-stats" class="flex flex-wrap gap-10 mt-14 pt-10 border-t border-gray-100"></div>
     </div>
   </div>
 </section>
@@ -206,15 +205,9 @@
 <!-- ╚══════════════════════════════════════════╝ -->
 <section id="publicaciones" class="py-24 bg-white">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 section-fade">
-      <div class="max-w-xl">
-        <h2 id="pub-title"    class="font-display text-4xl font-bold text-ink mb-4"></h2>
-        <p  id="pub-subtitle" class="text-muted leading-relaxed"></p>
-      </div>
-      <a id="pub-scholar" href="#" target="_blank"
-         class="shrink-0 flex items-center gap-2 text-sm font-semibold text-navy border border-navy/30 px-4 py-2 rounded-lg hover:bg-navy/5 transition-colors">
-        <i data-lucide="graduation-cap" class="w-4 h-4"></i> Google Scholar
-      </a>
+    <div class="max-w-xl mb-16 section-fade">
+      <h2 id="pub-title"    class="font-display text-4xl font-bold text-ink mb-4"></h2>
+      <p  id="pub-subtitle" class="text-muted leading-relaxed"></p>
     </div>
     <div id="pub-list" class="flex flex-col gap-5 section-fade"></div>
   </div>
@@ -222,9 +215,23 @@
 
 
 <!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  PRESENTACIONES / CURSOS / SEMINARIOS    ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<section id="presentaciones" class="py-24 bg-sand">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="max-w-xl mb-16 section-fade">
+      <h2 id="pres-title"    class="font-display text-4xl font-bold text-ink mb-4"></h2>
+      <p  id="pres-subtitle" class="text-muted leading-relaxed"></p>
+    </div>
+    <div id="pres-list" class="flex flex-col gap-4 section-fade"></div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════════╗ -->
 <!-- ║  RECURSOS — Visualizador Shiny           ║ -->
 <!-- ╚══════════════════════════════════════════╝ -->
-<section id="visualizadores" class="py-24 bg-sand">
+<section id="visualizadores" class="py-24 bg-white">
   <div class="max-w-6xl mx-auto px-6">
     <div class="max-w-xl mb-12 section-fade">
       <h2 id="viz-title"    class="font-display text-4xl font-bold text-ink mb-4"></h2>
@@ -337,7 +344,7 @@
 <!-- ============================================================
      SCRIPTS
      ============================================================ -->
-<script src="data.js"></script>
+<script src="data_v2.js"></script>
 <script>
 const $  = id => document.getElementById(id);
 const el = (tag, cls, html) => {
@@ -353,7 +360,7 @@ window.addEventListener('scroll', () => {
 });
 
 // Active nav
-const sectionIds = ['inicio','investigacion','integrantes','proyectos','publicaciones','visualizadores'];
+const sectionIds = ['inicio','investigacion','integrantes','proyectos','publicaciones','presentaciones','visualizadores'];
 window.addEventListener('scroll', () => {
   const y = window.scrollY + 120;
   sectionIds.forEach(id => {
@@ -396,7 +403,7 @@ drawFooterLogo(D.logos.footer || D.logos.nav || 'logo.png');
 // ── NAV ───────────────────────────────────────
 const sectionMap = {
   'Inicio':'inicio','Integrantes':'integrantes','Proyectos':'proyectos',
-  'Publicaciones':'publicaciones','Visualizadores':'visualizadores'
+  'Publicaciones':'publicaciones','Presentaciones':'presentaciones','Visualizadores':'visualizadores'
 };
 D.nav.links.forEach(link => {
   const sid = sectionMap[link.label] || link.href.replace('#','');
@@ -418,11 +425,6 @@ $('hero-cta-primary').textContent   = D.hero.cta_primary.label;
 $('hero-cta-primary').href          = D.hero.cta_primary.href;
 $('hero-cta-secondary').textContent = D.hero.cta_secondary.label;
 $('hero-cta-secondary').href        = D.hero.cta_secondary.href;
-D.hero.stats.forEach(s => {
-  $('hero-stats').appendChild(el('div','',`
-    <span class="font-display text-3xl font-bold text-navy">${s.value}</span>
-    <p class="text-xs text-muted mt-1 uppercase tracking-wider">${s.label}</p>`));
-});
 
 // ── LÍNEAS DE INVESTIGACIÓN ───────────────────
 $('rl-title').textContent    = D.research_lines.title;
@@ -490,7 +492,6 @@ D.projects.items.forEach(p => {
 // ── PUBLICACIONES ─────────────────────────────
 $('pub-title').textContent    = D.publications.title;
 $('pub-subtitle').textContent = D.publications.subtitle;
-$('pub-scholar').href         = D.publications.scholar_url;
 D.publications.items.forEach((p, idx) => {
   const num    = p.number !== undefined ? p.number : idx + 1;
   const href   = p.link || p.doi || '#';
@@ -508,6 +509,16 @@ D.publications.items.forEach((p, idx) => {
         <a href="${href}" target="_blank" class="tag bg-gray-100 text-gray-600 hover:bg-navy/10 hover:text-navy transition-colors">Ver artículo ↗</a>
       </div>
     </div>`));
+});
+
+// ── PRESENTACIONES / CURSOS / SEMINARIOS ──────
+$('pres-title').textContent    = D.presentations.title;
+$('pres-subtitle').textContent = D.presentations.subtitle;
+D.presentations.items.forEach(p => {
+  $('pres-list').appendChild(el('div','p-5 rounded-xl border border-gray-200 card-hover bg-white',`
+    <h3 class="font-semibold text-sm text-ink leading-snug mb-1">${p.title}</h3>
+    <p class="text-xs text-muted mb-1">${p.authors}</p>
+    <p class="text-xs text-navy/80 font-medium">${p.event}</p>`));
 });
 
 // ── VISUALIZADOR ──────────────────────────────
@@ -529,7 +540,7 @@ D.visualizer.layers.forEach((app, idx) => {
       frame.srcdoc = `<html><body style="margin:0;display:flex;align-items:center;justify-content:center;height:620px;font-family:sans-serif;background:#f8fafc;flex-direction:column;gap:14px;">
         <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="${app.color}" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
         <p style="font-size:15px;font-weight:600;color:#1e3a8a;margin:0">${app.label}</p>
-        <p style="font-size:12px;color:#6b7280;text-align:center;max-width:340px;line-height:1.6;margin:0">App Shiny próximamente disponible.<br>Agrega la URL en <code style="background:#e5e7eb;padding:2px 6px;border-radius:4px">data.js → shiny_url</code></p>
+        <p style="font-size:12px;color:#6b7280;text-align:center;max-width:340px;line-height:1.6;margin:0">App Shiny próximamente disponible.<br>Agrega la URL en <code style="background:#e5e7eb;padding:2px 6px;border-radius:4px">data_v2.js → shiny_url</code></p>
       </body></html>`;
     }
   });
@@ -542,7 +553,7 @@ const fe = $('footer-email');
 fe.textContent = D.contact.email; fe.href = `mailto:${D.contact.email}`;
 $('footer-address').textContent = D.contact.address;
 $('footer-linkedin').href = D.contact.linkedin     || '#';
-$('footer-scholar').href  = D.contact.scholar      || D.publications.scholar_url || '#';
+$('footer-scholar').href  = D.contact.scholar      || '#';
 $('footer-rg').href       = D.contact.researchgate || '#';
 $('footer-github').href   = D.contact.github       || '#';
 $('footer-year').textContent = new Date().getFullYear();

@@ -29,6 +29,7 @@ const SITE_DATA = {
       { label: "Integrantes",   href: "#integrantes" },
       { label: "Proyectos",     href: "#proyectos" },
       { label: "Publicaciones", href: "#publicaciones" },
+      { label: "Presentaciones",href: "#presentaciones" },
       { label: "Visualizadores",href: "#visualizadores" }
     ]
   },
@@ -38,12 +39,7 @@ const SITE_DATA = {
     title: "Epidemiología \nEspacial",
     subtitle: "El Laboratorio de Epidemiología Espacial busca integrar herramientas de análisis espacial y datos de salud pública para identificar patrones territoriales en la distribución de enfermedades, inequidad territorial y exposición a contaminantes ambientales. Buscamos aplicar y explorar técnicas de análisis avanzado para la resolución de problemas en salud, colaborando con centros de investigación nacionales e internacionales.",
     cta_primary:   { label: "Contáctanos",   href: "#contacto" },
-    cta_secondary: { label: "Ver proyectos", href: "#proyectos" },
-    stats: [
-      { value: "3+", label: "Proyectos activos" },
-      { value: "1",  label: "Publicaciones" },
-      { value: "8+",  label: "Integrantes" }
-    ]
+    cta_secondary: { label: "Ver proyectos", href: "#proyectos" }
   },
 
   research_lines: {
@@ -175,7 +171,6 @@ const SITE_DATA = {
   publications: {
     title: "Publicaciones",
     subtitle: "Selección de publicaciones recientes en revistas indexadas. Para revisar el listado completo de publicaciones asociadas al laboratorio, consultar el perfil de Google Scholar.",
-    scholar_url: "https://scholar.google.com/citations?user=0Fu4x2MAAAAJ&hl=es",
     items: [
       {
         number: 1,
@@ -185,6 +180,21 @@ const SITE_DATA = {
         journal: "Scientific Reports",
         link: "https://www.nature.com/articles/s41598-026-36462-w",
         tags: ["Q1", "Factor de impacto 3.9"]
+      }
+    ]
+  },
+
+  // ── PRESENTACIONES / CURSOS / SEMINARIOS ──────────────────
+  //  Agrega cada entrada con: title, authors, event
+  // ──────────────────────────────────────────────────────────
+  presentations: {
+    title: "Presentaciones - Cursos - Seminarios",
+    subtitle: "Participaciones en congresos, conferencias, cursos y seminarios del laboratorio.",
+    items: [
+      {
+        title: "Epidemiología espacial aplicada a enfermedades infecciosas en contexto urbano",
+        authors: "S Ayala, J Guerrero-Muñoz",
+        event: "Congreso Chileno de Salud Pública · Santiago, Chile · 2024"
       }
     ]
   },
