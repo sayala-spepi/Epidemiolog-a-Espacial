@@ -4,7 +4,7 @@ Fecha de creación: 27-05-2026
 
 ## Resumen
 
-Repostirorio del seitio web del Laboratorio de Epidemiología Espacial. Cuenta con actualización continua. 
+Repositorio del sitio web del Laboratorio de Epidemiología Espacial. Cuenta con actualización continua. 
 
 ## Autores y contactos:
 
@@ -17,30 +17,5 @@ Repostirorio del seitio web del Laboratorio de Epidemiología Espacial. Cuenta c
 ## Objetivo
 
 - Difundir los resultados y avances en la materia
-
-## Fuente principal de datos:
-- NA
-
-## Métodos:
-### Área de estudio: 
-Estudios de nivel pais, en distintas escalas.
-
-### Unidad de análisis: 
-Diversidad de unidades (individuo/poblacional)
-
-### Periodo de análisis: 
-NA
-
-### Variable respuesta: 
-NA
-
-### Covariables:
-- NA
-
-### Análisis de datos
-- NA
-
-### Flujo de trabajo
-NA
 
 .README basado en OSF (Open Science Fundation) y Cornell University templates. 
