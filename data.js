@@ -191,7 +191,7 @@ const SITE_DATA = {
     title: "Presentaciones",
     subtitle: "Participaciones en congresos, conferencias, cursos y seminarios de integrantes-colaboradores del Laboratorio.",
     items: [
-            {
+      {
         title: "Multimorbidity shows a strong dose-response association with in-hospital mortality in pulmonary tuberculosis",
         authors: "Guerrero-Munoz, J. Ayala, S",
         event: "II Congreso de estudiantes de postgrado en ciencia y salud. Santiago, Chile · 2026"
