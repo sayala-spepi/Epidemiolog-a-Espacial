@@ -195,7 +195,7 @@ const SITE_DATA = {
         title: "Multimorbidity shows a strong dose-response association with in-hospital mortality in pulmonary tuberculosis",
         authors: "Guerrero-Munoz, J. Ayala, S",
         event: "II Congreso de estudiantes de postgrado en ciencia y salud. Santiago, Chile · 2026"
-      }
+      },
       {
         title: "Factores asociados con la distribución espacial de la Tuberculosis pulmonar en la Región Metropolitana de Santiago, Chile",
         authors: "Ayala, S, Escobar, N, Canals, M",
