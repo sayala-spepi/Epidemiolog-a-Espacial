@@ -217,10 +217,10 @@ const SITE_DATA = {
       },
       {
         id: "aire",
-        label: "Contaminación del Aire",
+        label: "Clima y Salud",
         color: "#7c3aed",
         shiny_url: "",
-        description: "Concentraciones de PM2.5 medidas por sensores PurpleAir en escuelas del Gran Santiago. Proyecto REDES+."
+        description: "Relación entre variables ambientales - climáticas y efectos en salud"
       },
       {
         id: "vecindarios",
