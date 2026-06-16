@@ -191,6 +191,11 @@ const SITE_DATA = {
     title: "Presentaciones",
     subtitle: "Participaciones en congresos, conferencias, cursos y seminarios de integrantes-colaboradores del Laboratorio.",
     items: [
+            {
+        title: "Multimorbidity shows a strong dose-response association with in-hospital mortality in pulmonary tuberculosis",
+        authors: "Guerrero-Munoz, J. Ayala, S",
+        event: "II Congreso de estudiantes de postgrado en ciencia y salud. Santiago, Chile · 2026"
+      }
       {
         title: "Factores asociados con la distribución espacial de la Tuberculosis pulmonar en la Región Metropolitana de Santiago, Chile",
         authors: "Ayala, S, Escobar, N, Canals, M",
@@ -212,10 +217,10 @@ const SITE_DATA = {
       },
       {
         id: "aire",
-        label: "Contaminación del Aire",
+        label: "Clima y Salud",
         color: "#7c3aed",
         shiny_url: "",
-        description: "Concentraciones de PM2.5 medidas por sensores PurpleAir en escuelas del Gran Santiago. Proyecto REDES+."
+        description: "Relación entre variables ambientales - climáticas y efectos en salud"
       },
       {
         id: "vecindarios",
