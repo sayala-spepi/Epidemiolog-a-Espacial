@@ -75,7 +75,8 @@ const SITE_DATA = {
         photo: "https://github.com/sayala-spepi/espi-lab/blob/main/imagenes/foto%20bn.jpg?raw=true",
         researchgate: "https://www.researchgate.net/profile/Salvador_Ayala",
         scholar: "https://scholar.google.com/citations?user=0Fu4x2MAAAAJ&hl=es",
-        linkedin: "https://www.linkedin.com/in/salvador-ayala-pizarro-70a83b7a/"
+        linkedin: "https://www.linkedin.com/in/salvador-ayala-pizarro-70a83b7a/",
+        github: "https://github.com/sayala-spepi"
       },
       {
         name: "Mg. Ismael Bravo",
@@ -84,7 +85,8 @@ const SITE_DATA = {
         photo: "https://github.com/sayala-spepi/espi-lab/blob/main/imagenes/ismael_bravo.png?raw=true",
         researchgate: "#",
         scholar: "#",
-        linkedin: "https://www.linkedin.com/in/ismael-bravo-rodríguez-7769b2206/"
+        linkedin: "https://www.linkedin.com/in/ismael-bravo-rodríguez-7769b2206/",
+        github: "#"
       },
       {
         name: "Mg. José Daniel Conejeros",
@@ -93,7 +95,17 @@ const SITE_DATA = {
         photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/imagenes/jose_conejeros.png?raw=true",
         researchgate: "#",
         scholar: "#",
-        linkedin: "https://www.linkedin.com/in/joseconejerosp/"
+        linkedin: "https://www.linkedin.com/in/joseconejerosp/",
+        github: "#"
+      },
+      {
+        name: "Mg. Bryan Castillo Mendoza",
+        role: "Investigador asistente",
+        area: "Magíster (c) en Econ. Agraria y Ambiental, PUC",
+        photo: "https://avatars.githubusercontent.com/u/24574446?v=4",
+        researchgate: "https://www.researchgate.net/profile/Bryan-Castillo-5?ev=hdr_xprf&_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6ImhvbWUiLCJwYWdlIjoiaG9tZSIsInBvc2l0aW9uIjoiZ2xvYmFsSGVhZGVyIn19",
+        scholar: "https://scholar.google.com/citations?user=bzlx44wAAAAJ&hl=es",
+        linkedin: "https://www.linkedin.com/in/bwcastillomendoza/"
       },
       {
         name: "Mg. Jesús Guerrero-Muñoz",
@@ -102,7 +114,8 @@ const SITE_DATA = {
         photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/imagenes/jesus_guerrero.png?raw=true",
         researchgate: "https://www.researchgate.net/profile/Jesus-Guerrero-Munoz?ev=hdr_xprf",
         scholar: "https://scholar.google.com/citations?view_op=list_works&hl=es&user=xMi_ZzwAAAAJ",
-        linkedin: "https://www.linkedin.com/in/bq-jgmunoz/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        linkedin: "https://www.linkedin.com/in/bq-jgmunoz/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        github: "#"
       },
       {
         name: "Mg. Jorge Cárdenas Pizarro",
@@ -111,7 +124,8 @@ const SITE_DATA = {
         photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/imagenes/jorge_cardenas.png?raw=true",
         researchgate: "https://www.researchgate.net/profile/Jorge-Cardenas-Pizarro?ev=hdr_xprf",
         scholar: "https://scholar.google.com/citations?user=dKz40iMAAAAJ&hl=es",
-        linkedin: "linkedin.com/in/jorge-eduardo-cárdenas-pizarro-b9b048146"
+        linkedin: "linkedin.com/in/jorge-eduardo-cárdenas-pizarro-b9b048146",
+        github: "#"
       },
       {
         name: "Lic. Héctor Spring Pedreros",
@@ -120,7 +134,8 @@ const SITE_DATA = {
         photo: "https://github.com/sayala-spepi/lab-epi-espacial/blob/main/imagenes/hector_spring.png?raw=true",
         researchgate: "#",
         scholar: "#",
-        linkedin: "https://www.linkedin.com/in/h%C3%A9ctor-spring-pedreros-70197822b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        linkedin: "https://www.linkedin.com/in/h%C3%A9ctor-spring-pedreros-70197822b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        github: "#"
       },
       {
         name: "Lic. Noemí Concha",
@@ -129,7 +144,8 @@ const SITE_DATA = {
         photo: "imagen.png",
         researchgate: "#",
         scholar: "#",
-        linkedin: "#"
+        linkedin: "#",
+        github: "#"
       }
     ]
   },
@@ -144,8 +160,7 @@ const SITE_DATA = {
         funder: "ANID FONDECYT Regular",
         role: "Investigador Principal",
         title: "Evaluation of neighborhoods as a social determinant of health in Chile: the case of pulmonary tuberculosis",
-        desc: "El objetivo del presente proyecto es evaluar la relación espacio-temporal entre los barrios (en cuanto a su composición socioeconómica, demográfica, ambiental, de infraestructuras y cultural) y el riesgo individual de padecer tuberculosis pulmonar en el Área Metropolitana de Santiago, la principal zona urbana de Chile.",
-        tags: ["Tuberculosis", "Mortalidad", "Neighborhoods", "Epidemiología"]
+        desc: "El objetivo del presente proyecto es evaluar la relación espacio-temporal entre los barrios (en cuanto a su composición socioeconómica, demográfica, ambiental, de infraestructuras y cultural) y el riesgo individual de padecer tuberculosis pulmonar en el Área Metropolitana de Santiago, la principal zona urbana de Chile."
       },
       {
         status: "En curso",
@@ -153,8 +168,7 @@ const SITE_DATA = {
         funder: "ANID FONIS",
         role: "Investigador Principal",
         title: "Estimación espacial del riesgo de Tuberculosis pulmonar por áreas pequeñas en Chile.",
-        desc: "Evaluar el riesgo de Tuberculosis pulmonar por distritos censales y las características sociodemográficas asociadas para todas las regiones del país entre los años 2016 y 2023.",
-        tags: ["Tuberculosis", "Atlas", "Áreas pequeñas", "Geografía"]
+        desc: "Evaluar el riesgo de Tuberculosis pulmonar por distritos censales y las características sociodemográficas asociadas para todas las regiones del país entre los años 2016 y 2023."
       },
       {
         status: "En curso",
@@ -162,8 +176,7 @@ const SITE_DATA = {
         funder: "Proyecto Interuniversitario. UDD - UAI - U.Mayor",
         role: "Co-Investigador (UDD)",
         title: "REDES+: Efectos de la exposición a la contaminación atmosférica en la inasistencia escolar",
-        desc: "Evaluar el potencial efecto mediador de la asistencia escolar entre la exposición a factores ambientales de establecimientos educacionales (i.e., material particulado, temperatura, vegetación) sobre el rendimiento académico de escolares en la Región Metropolitana. Coordinado entre investigadores de la Universidad del Desarrollo, Universidad Adolfo Ibáñez y la Universidad Mayor.",
-        tags: ["PM2.5", "PurpleAir", "Educación", "Geoestadística"]
+        desc: "Evaluar el potencial efecto mediador de la asistencia escolar entre la exposición a factores ambientales de establecimientos educacionales (i.e., material particulado, temperatura, vegetación) sobre el rendimiento académico de escolares en la Región Metropolitana. Coordinado entre investigadores de la Universidad del Desarrollo, Universidad Adolfo Ibáñez y la Universidad Mayor."
       }
     ]
   },
@@ -178,8 +191,7 @@ const SITE_DATA = {
         authors: "<strong style='color:#111827;font-weight:700;'>S Ayala</strong>, N Escobar, L Vizeu Barrozo, F Chiaravalloti-Neto, M Canals",
         title: "Spatial neighborhood patterns of pulmonary tuberculosis in a large urban area: the case of Santiago, Chile",
         journal: "Scientific Reports",
-        link: "https://www.nature.com/articles/s41598-026-36462-w",
-        tags: ["Q1", "Factor de impacto 3.9"]
+        link: "https://www.nature.com/articles/s41598-026-36462-w"
       }
     ]
   },
