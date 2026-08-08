@@ -241,9 +241,7 @@
     <div class="section-fade">
       <div id="shiny-btns" class="flex flex-wrap gap-2 mb-4"></div>
       <p id="shiny-desc" class="text-sm text-muted mb-5 italic"></p>
-      <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
-        <iframe id="shiny-frame" width="100%" height="620" style="border:none;display:block;" allowfullscreen></iframe>
-      </div>
+      <div id="shiny-viewer" class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100"></div>
       <p id="viz-note" class="text-xs text-muted mt-4"></p>
     </div>
   </div>
@@ -530,16 +528,23 @@ D.visualizer.layers.forEach((app, idx) => {
     document.querySelectorAll('.shiny-btn').forEach(b => { b.style.background=''; b.style.color='#6b7280'; });
     btn.style.background = app.color + '18'; btn.style.color = app.color;
     $('shiny-desc').textContent = app.description;
-    const frame = $('shiny-frame');
+    const viewer = $('shiny-viewer');
     if (app.shiny_url) {
-      frame.removeAttribute('srcdoc'); frame.src = app.shiny_url;
+      const coverImg = app.cover
+        ? `<img src="${app.cover}" alt="${app.label}" style="width:100%;height:auto;display:block;">`
+        : `<div style="display:flex;align-items:center;justify-content:center;height:200px;background:#f8fafc;font-size:15px;font-weight:600;color:#1e3a8a;">${app.label}</div>`;
+      viewer.innerHTML = `
+        <a href="${app.shiny_url}" target="_blank" title="Abrir ${app.label}" class="block group relative">
+          ${coverImg}
+          <span class="absolute bottom-4 right-4 px-4 py-2 bg-white/95 border border-gray-200 rounded-lg text-sm font-semibold text-navy shadow-sm group-hover:bg-navy group-hover:text-white transition-colors">Abrir aplicación ↗</span>
+        </a>`;
     } else {
-      frame.src = 'about:blank';
-      frame.srcdoc = `<html><body style="margin:0;display:flex;align-items:center;justify-content:center;height:620px;font-family:sans-serif;background:#f8fafc;flex-direction:column;gap:14px;">
-        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="${app.color}" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-        <p style="font-size:15px;font-weight:600;color:#1e3a8a;margin:0">${app.label}</p>
-        <p style="font-size:12px;color:#6b7280;text-align:center;max-width:340px;line-height:1.6;margin:0">App Shiny próximamente disponible.<br>Agrega la URL en <code style="background:#e5e7eb;padding:2px 6px;border-radius:4px">data_v2.js → shiny_url</code></p>
-      </body></html>`;
+      viewer.innerHTML = `
+        <div style="display:flex;align-items:center;justify-content:center;height:300px;background:#f8fafc;flex-direction:column;gap:14px;">
+          <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="${app.color}" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <p style="font-size:15px;font-weight:600;color:#1e3a8a;margin:0">${app.label}</p>
+          <p style="font-size:12px;color:#6b7280;text-align:center;max-width:340px;line-height:1.6;margin:0">App Shiny próximamente disponible.</p>
+        </div>`;
     }
   });
   $('shiny-btns').appendChild(btn);

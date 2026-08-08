@@ -216,15 +216,21 @@ const SITE_DATA = {
     ]
   },
 
+  // ── VISUALIZADORES ────────────────────────────────────────
+  //  Cada app lleva: shiny_url (link a la app) y cover (imagen
+  //  de portada). Al hacer clic en la portada se abre la app
+  //  en una pestaña nueva. Sin shiny_url → "en desarrollo".
+  // ──────────────────────────────────────────────────────────
   visualizer: {
     title: "Visualizador de Datos",
-    subtitle: "Explora nuestros datos geoespaciales de manera interactiva. Selecciona una aplicación para visualizar en el visor.",
+    subtitle: "Explora nuestros datos geoespaciales de manera interactiva. Selecciona una aplicación y presiona la portada para abrirla.",
     layers: [
       {
         id: "tuberculosis",
         label: "Atlas de Tuberculosis",
         color: "#dc2626",
         shiny_url: "https://salvadorayala.shinyapps.io/generador_mapas_shinny/",
+        cover: "https://github.com/sayala-spepi/espi-lab/blob/main/imagenes/portada_generador_mapas.png?raw=true",
         description: "Distribución espacial de casos de tuberculosis pulmonar por áreas pequeñas en Chile. Fuente: MINSAL · 2015–2023."
       },
       {
@@ -232,6 +238,7 @@ const SITE_DATA = {
         label: "Clima y Salud",
         color: "#7c3aed",
         shiny_url: "",
+        cover: "",
         description: "Relación entre variables ambientales - climáticas y efectos en salud"
       },
       {
@@ -239,6 +246,7 @@ const SITE_DATA = {
         label: "Vecindarios & Salud",
         color: "#0891b2",
         shiny_url: "",
+        cover: "",
         description: "Efectos de los vecindarios como determinante social de salud en el Área Metropolitana del Gran Santiago."
       }
     ],
