@@ -224,7 +224,7 @@ const SITE_DATA = {
         id: "tuberculosis",
         label: "Atlas de Tuberculosis",
         color: "#dc2626",
-        shiny_url: "http://salvadorayala.shinyapps.io/generador_mapas_shinny",
+        shiny_url: "https://salvadorayala.shinyapps.io/generador_mapas_shinny/",
         description: "Distribución espacial de casos de tuberculosis pulmonar por áreas pequeñas en Chile. Fuente: MINSAL · 2015–2023."
       },
       {
