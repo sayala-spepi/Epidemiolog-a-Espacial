@@ -227,11 +227,11 @@ const SITE_DATA = {
     layers: [
       {
         id: "tuberculosis",
-        label: "Atlas de Tuberculosis",
+        label: "Mapas corópleticos",
         color: "#dc2626",
         shiny_url: "https://salvadorayala.shinyapps.io/generador_mapas_shinny/",
         cover: "https://github.com/sayala-spepi/espi-lab/blob/main/imagenes/portada_generador_mapas.png?raw=true",
-        description: "Distribución espacial de casos de tuberculosis pulmonar por áreas pequeñas en Chile. Fuente: MINSAL · 2015–2023."
+        description: "Generador de mapas corópleticos"
       },
       {
         id: "aire",
@@ -242,12 +242,12 @@ const SITE_DATA = {
         description: "Relación entre variables ambientales - climáticas y efectos en salud"
       },
       {
-        id: "vecindarios",
+        id: "Atlas de tuberculosis",
         label: "Vecindarios & Salud",
         color: "#0891b2",
         shiny_url: "",
         cover: "",
-        description: "Efectos de los vecindarios como determinante social de salud en el Área Metropolitana del Gran Santiago."
+        description: "Distribución espacial de casos de tuberculosis pulmonar por áreas pequeñas en Chile. Fuente: MINSAL · 2015–2023."
       }
     ],
     note: "Aplicaciones en desarrollo"
